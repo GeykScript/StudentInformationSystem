@@ -32,7 +32,7 @@
             label9 = new Label();
             label2 = new Label();
             label12 = new Label();
-            button1 = new Button();
+            addstudent = new Button();
             dataGridView1 = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             LastName = new DataGridViewTextBoxColumn();
@@ -40,8 +40,10 @@
             course = new DataGridViewTextBoxColumn();
             year = new DataGridViewTextBoxColumn();
             dept = new DataGridViewTextBoxColumn();
-            button2 = new Button();
+            editstudent = new Button();
+            btnPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnPanel.SuspendLayout();
             SuspendLayout();
             // 
             // label10
@@ -90,15 +92,16 @@
             label12.TabIndex = 39;
             label12.Text = "April 13, 2025";
             // 
-            // button1
+            // addstudent
             // 
-            button1.BackColor = Color.LightSkyBlue;
-            button1.Location = new Point(503, 122);
-            button1.Name = "button1";
-            button1.Size = new Size(116, 41);
-            button1.TabIndex = 53;
-            button1.Text = "Add Student";
-            button1.UseVisualStyleBackColor = false;
+            addstudent.BackColor = Color.LightSkyBlue;
+            addstudent.Location = new Point(3, 3);
+            addstudent.Name = "addstudent";
+            addstudent.Size = new Size(116, 41);
+            addstudent.TabIndex = 53;
+            addstudent.Text = "Add Student";
+            addstudent.UseVisualStyleBackColor = false;
+            addstudent.Click += button1_Click;
             // 
             // dataGridView1
             // 
@@ -146,15 +149,26 @@
             dept.Name = "dept";
             dept.ReadOnly = true;
             // 
-            // button2
+            // editstudent
             // 
-            button2.BackColor = Color.LightYellow;
-            button2.Location = new Point(624, 122);
-            button2.Name = "button2";
-            button2.Size = new Size(86, 41);
-            button2.TabIndex = 55;
-            button2.Text = "Edit ";
-            button2.UseVisualStyleBackColor = false;
+            editstudent.BackColor = Color.LightYellow;
+            editstudent.Location = new Point(125, 3);
+            editstudent.Name = "editstudent";
+            editstudent.Size = new Size(86, 41);
+            editstudent.TabIndex = 55;
+            editstudent.Text = "Edit ";
+            editstudent.UseVisualStyleBackColor = false;
+            editstudent.Click += editstudent_Click;
+            // 
+            // btnPanel
+            // 
+            btnPanel.Controls.Add(addstudent);
+            btnPanel.Controls.Add(editstudent);
+            btnPanel.Location = new Point(496, 113);
+            btnPanel.Name = "btnPanel";
+            btnPanel.Size = new Size(214, 50);
+            btnPanel.TabIndex = 56;
+            btnPanel.Paint += btnPanel_Paint;
             // 
             // Students
             // 
@@ -162,9 +176,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
+            Controls.Add(btnPanel);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label2);
@@ -173,6 +186,7 @@
             Name = "Students";
             Text = "Students";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            btnPanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,7 +197,7 @@
         private Label label9;
         private Label label2;
         private Label label12;
-        private Button button1;
+        private Button addstudent;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn LastName;
@@ -191,6 +205,7 @@
         private DataGridViewTextBoxColumn course;
         private DataGridViewTextBoxColumn year;
         private DataGridViewTextBoxColumn dept;
-        private Button button2;
+        private Button editstudent;
+        private Panel btnPanel;
     }
 }

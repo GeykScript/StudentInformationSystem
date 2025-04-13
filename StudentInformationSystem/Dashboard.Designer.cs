@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
+            logsBtn = new Button();
             titleName = new Label();
             logoutbtn = new Button();
             courseBtn = new Button();
@@ -55,15 +55,17 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
+            fileSystemWatcher1 = new FileSystemWatcher();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightSkyBlue;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(logsBtn);
             panel1.Controls.Add(titleName);
             panel1.Controls.Add(logoutbtn);
             panel1.Controls.Add(courseBtn);
@@ -74,15 +76,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 461);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
-            // button1
+            // logsBtn
             // 
-            button1.Location = new Point(37, 266);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 37);
-            button1.TabIndex = 7;
-            button1.Text = "Logs";
-            button1.UseVisualStyleBackColor = true;
+            logsBtn.Location = new Point(37, 266);
+            logsBtn.Name = "logsBtn";
+            logsBtn.Size = new Size(124, 37);
+            logsBtn.TabIndex = 7;
+            logsBtn.Text = "Logs";
+            logsBtn.UseVisualStyleBackColor = true;
+            logsBtn.Click += logsBtn_Click;
             // 
             // titleName
             // 
@@ -173,6 +177,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(783, 435);
             panel2.TabIndex = 0;
+            panel2.Paint += panel2_Paint;
             // 
             // label11
             // 
@@ -371,6 +376,11 @@
             textBox1.Text = "1000";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -388,6 +398,7 @@
             mainPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
         }
 
@@ -419,6 +430,7 @@
         private Label label10;
         private Label label11;
         private TextBox textBox7;
-        private Button button1;
+        private Button logsBtn;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }

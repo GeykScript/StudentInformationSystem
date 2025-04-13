@@ -36,6 +36,8 @@
             password = new TextBox();
             username = new TextBox();
             titleName = new Label();
+            textBox1 = new TextBox();
+            label3 = new Label();
             groupLogin.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +47,9 @@
             groupLogin.Controls.Add(forgotPass);
             groupLogin.Controls.Add(loginBtn);
             groupLogin.Controls.Add(label2);
+            groupLogin.Controls.Add(label3);
             groupLogin.Controls.Add(label1);
+            groupLogin.Controls.Add(textBox1);
             groupLogin.Controls.Add(password);
             groupLogin.Controls.Add(username);
             groupLogin.Controls.Add(titleName);
@@ -129,6 +133,24 @@
             titleName.Text = "iSTUD";
             titleName.TextAlign = ContentAlignment.TopCenter;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(92, 173);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(213, 32);
+            textBox1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(92, 155);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 4;
+            label3.Text = "Username:";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -156,5 +178,7 @@
         private Label label1;
         private Label forgotPass;
         private Button loginBtn;
+        private Label label3;
+        private TextBox textBox1;
     }
 }

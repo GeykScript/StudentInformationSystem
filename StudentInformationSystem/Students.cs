@@ -31,5 +31,24 @@ namespace StudentInformationSystem
             dataGridView1.Rows.Add("9", "Hernandez", "Olivia", "3rd Year", "IT Dept", "IT");
             dataGridView1.Rows.Add("10", "Lopez", "James", "2nd Year", "CS Dept", "CS");
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddStudentInformation addStudentForm = new AddStudentInformation();
+            addStudentForm.Show();
+        }
+
+        private void btnPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void editstudent_Click(object sender, EventArgs e)
+        {
+            Edit editstudent = new Edit();
+            editstudent.Show();
+           
+        }
     }
 }
