@@ -41,7 +41,7 @@
             // 
             // groupLogin
             // 
-            groupLogin.BackColor = SystemColors.ButtonFace;
+            groupLogin.BackColor = Color.LightSkyBlue;
             groupLogin.Controls.Add(forgotPass);
             groupLogin.Controls.Add(loginBtn);
             groupLogin.Controls.Add(label2);
@@ -49,11 +49,9 @@
             groupLogin.Controls.Add(password);
             groupLogin.Controls.Add(username);
             groupLogin.Controls.Add(titleName);
-            groupLogin.Location = new Point(371, 49);
-            groupLogin.Margin = new Padding(3, 4, 3, 4);
+            groupLogin.Location = new Point(325, 37);
             groupLogin.Name = "groupLogin";
-            groupLogin.Padding = new Padding(3, 4, 3, 4);
-            groupLogin.Size = new Size(457, 476);
+            groupLogin.Size = new Size(400, 357);
             groupLogin.TabIndex = 0;
             groupLogin.TabStop = false;
             groupLogin.Enter += groupLogin_Enter;
@@ -62,10 +60,10 @@
             // 
             forgotPass.AutoSize = true;
             forgotPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            forgotPass.ForeColor = SystemColors.ControlDarkDark;
-            forgotPass.Location = new Point(233, 353);
+            forgotPass.ForeColor = SystemColors.InactiveCaptionText;
+            forgotPass.Location = new Point(204, 265);
             forgotPass.Name = "forgotPass";
-            forgotPass.Size = new Size(134, 20);
+            forgotPass.Size = new Size(104, 15);
             forgotPass.TabIndex = 7;
             forgotPass.Text = "Forgot Password?";
             // 
@@ -73,10 +71,9 @@
             // 
             loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = SystemColors.ControlDarkDark;
-            loginBtn.Location = new Point(155, 405);
-            loginBtn.Margin = new Padding(3, 4, 3, 4);
+            loginBtn.Location = new Point(136, 304);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(147, 45);
+            loginBtn.Size = new Size(129, 34);
             loginBtn.TabIndex = 6;
             loginBtn.Text = "Login";
             loginBtn.UseVisualStyleBackColor = true;
@@ -85,63 +82,60 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(109, 284);
+            label2.Location = new Point(95, 213);
             label2.Name = "label2";
-            label2.Size = new Size(73, 20);
+            label2.Size = new Size(60, 15);
             label2.TabIndex = 5;
             label2.Text = "Password:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(109, 207);
+            label1.Location = new Point(95, 155);
             label1.Name = "label1";
-            label1.Size = new Size(78, 20);
+            label1.Size = new Size(63, 15);
             label1.TabIndex = 4;
             label1.Text = "Username:";
             // 
             // password
             // 
             password.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            password.Location = new Point(109, 308);
-            password.Margin = new Padding(3, 4, 3, 4);
+            password.Location = new Point(95, 231);
             password.Multiline = true;
             password.Name = "password";
             password.PasswordChar = '*';
-            password.Size = new Size(243, 40);
+            password.Size = new Size(213, 31);
             password.TabIndex = 3;
             // 
             // username
             // 
             username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            username.Location = new Point(109, 231);
-            username.Margin = new Padding(3, 4, 3, 4);
+            username.Location = new Point(95, 173);
             username.Multiline = true;
             username.Name = "username";
-            username.Size = new Size(243, 41);
+            username.Size = new Size(213, 32);
             username.TabIndex = 2;
             // 
             // titleName
             // 
             titleName.AutoSize = true;
-            titleName.BackColor = SystemColors.ButtonFace;
-            titleName.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            titleName.ForeColor = SystemColors.ButtonShadow;
-            titleName.Location = new Point(55, 25);
+            titleName.BackColor = Color.LightSkyBlue;
+            titleName.Font = new Font("Sitka Banner", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleName.ForeColor = SystemColors.ButtonHighlight;
+            titleName.Location = new Point(63, 19);
             titleName.Name = "titleName";
-            titleName.Size = new Size(413, 159);
+            titleName.Size = new Size(313, 139);
             titleName.TabIndex = 0;
             titleName.Text = "iSTUD";
             titleName.TextAlign = ContentAlignment.TopCenter;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1157, 615);
+            ClientSize = new Size(1012, 461);
             Controls.Add(groupLogin);
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Login";
