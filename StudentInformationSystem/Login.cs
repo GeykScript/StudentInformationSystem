@@ -7,11 +7,6 @@ namespace StudentInformationSystem
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -21,7 +16,11 @@ namespace StudentInformationSystem
         {
             Dashboard dashboardPage = new Dashboard();
             dashboardPage.Show();
-            this.Hide();
+            this.Hide();    
+        }
+
+        private void groupLogin_Enter(object sender, EventArgs e)
+        {
 
         }
     }

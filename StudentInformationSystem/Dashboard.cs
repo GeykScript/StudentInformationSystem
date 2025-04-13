@@ -17,16 +17,45 @@ namespace StudentInformationSystem
             InitializeComponent();
         }
 
-        private void Logout_Click(object sender, EventArgs e)
+        private void logoutbtn_Click(object sender, EventArgs e)
         {
             Login loginPage = new Login();
             loginPage.Show();
             this.Hide();
         }
-
-        private void titleName_Click(object sender, EventArgs e)
+        public void loadform(object form)
         {
+            if (this.mainPanel.Controls.Count > 0)
+                this.mainPanel.Controls.RemoveAt(0);
 
+            if (form is Form fh)
+            {
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.mainPanel.Controls.Add(fh);
+                this.mainPanel.Tag = fh;
+                fh.Show();
+            }
+        }
+
+        private void dashboardBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Dashboard1());
+        }
+
+        private void studentBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Students());
+        }
+
+        private void courseBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Courses());
+        }
+
+        private void logsBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Logs());
         }
     }
 }

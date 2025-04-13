@@ -28,90 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dashboardgroup = new GroupBox();
-            Logout = new Button();
-            titleName = new Label();
-            studentsbtn = new Button();
-            gradeBtn = new Button();
+            panel1 = new Panel();
+            logoutbtn = new Button();
             courseBtn = new Button();
-            logBtn = new Button();
-            dashboardgroup.SuspendLayout();
+            logsBtn = new Button();
+            dashboardBtn = new Button();
+            studentBtn = new Button();
+            mainPanel = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dashboardgroup
+            // panel1
             // 
-            dashboardgroup.BackColor = SystemColors.ButtonFace;
-            dashboardgroup.Controls.Add(logBtn);
-            dashboardgroup.Controls.Add(courseBtn);
-            dashboardgroup.Controls.Add(gradeBtn);
-            dashboardgroup.Controls.Add(studentsbtn);
-            dashboardgroup.Controls.Add(Logout);
-            dashboardgroup.Controls.Add(titleName);
-            dashboardgroup.Location = new Point(0, -11);
-            dashboardgroup.Name = "dashboardgroup";
-            dashboardgroup.Size = new Size(192, 473);
-            dashboardgroup.TabIndex = 0;
-            dashboardgroup.TabStop = false;
+            panel1.BackColor = SystemColors.ButtonFace;
+            panel1.Controls.Add(logoutbtn);
+            panel1.Controls.Add(courseBtn);
+            panel1.Controls.Add(logsBtn);
+            panel1.Controls.Add(dashboardBtn);
+            panel1.Controls.Add(studentBtn);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 461);
+            panel1.TabIndex = 0;
             // 
-            // Logout
+            // logoutbtn
             // 
-            Logout.Location = new Point(21, 428);
-            Logout.Name = "Logout";
-            Logout.Size = new Size(152, 32);
-            Logout.TabIndex = 2;
-            Logout.Text = "Logout";
-            Logout.UseVisualStyleBackColor = true;
-            Logout.Click += Logout_Click;
-            // 
-            // titleName
-            // 
-            titleName.AutoSize = true;
-            titleName.BackColor = SystemColors.ButtonFace;
-            titleName.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            titleName.ForeColor = SystemColors.ButtonShadow;
-            titleName.Location = new Point(12, 45);
-            titleName.Name = "titleName";
-            titleName.Size = new Size(167, 65);
-            titleName.TabIndex = 1;
-            titleName.Text = "iSTUD";
-            titleName.TextAlign = ContentAlignment.TopCenter;
-            titleName.Click += titleName_Click;
-            // 
-            // studentsbtn
-            // 
-            studentsbtn.Location = new Point(19, 148);
-            studentsbtn.Name = "studentsbtn";
-            studentsbtn.Size = new Size(152, 32);
-            studentsbtn.TabIndex = 3;
-            studentsbtn.Text = "Students";
-            studentsbtn.UseVisualStyleBackColor = true;
-            // 
-            // gradeBtn
-            // 
-            gradeBtn.Location = new Point(19, 186);
-            gradeBtn.Name = "gradeBtn";
-            gradeBtn.Size = new Size(152, 32);
-            gradeBtn.TabIndex = 4;
-            gradeBtn.Text = "Grades";
-            gradeBtn.UseVisualStyleBackColor = true;
+            logoutbtn.BackColor = SystemColors.ScrollBar;
+            logoutbtn.Location = new Point(37, 393);
+            logoutbtn.Name = "logoutbtn";
+            logoutbtn.Size = new Size(124, 37);
+            logoutbtn.TabIndex = 5;
+            logoutbtn.Text = "Logout";
+            logoutbtn.UseVisualStyleBackColor = false;
+            logoutbtn.Click += logoutbtn_Click;
             // 
             // courseBtn
             // 
-            courseBtn.Location = new Point(19, 224);
+            courseBtn.Location = new Point(37, 223);
             courseBtn.Name = "courseBtn";
-            courseBtn.Size = new Size(152, 32);
-            courseBtn.TabIndex = 5;
+            courseBtn.Size = new Size(124, 37);
+            courseBtn.TabIndex = 3;
             courseBtn.Text = "Courses";
             courseBtn.UseVisualStyleBackColor = true;
+            courseBtn.Click += courseBtn_Click;
             // 
-            // logBtn
+            // logsBtn
             // 
-            logBtn.Location = new Point(19, 262);
-            logBtn.Name = "logBtn";
-            logBtn.Size = new Size(152, 32);
-            logBtn.TabIndex = 6;
-            logBtn.Text = "Logs";
-            logBtn.UseVisualStyleBackColor = true;
+            logsBtn.Location = new Point(37, 266);
+            logsBtn.Name = "logsBtn";
+            logsBtn.Size = new Size(124, 37);
+            logsBtn.TabIndex = 4;
+            logsBtn.Text = "Logs";
+            logsBtn.UseVisualStyleBackColor = true;
+            logsBtn.Click += logsBtn_Click;
+            // 
+            // dashboardBtn
+            // 
+            dashboardBtn.Location = new Point(37, 137);
+            dashboardBtn.Name = "dashboardBtn";
+            dashboardBtn.Size = new Size(124, 37);
+            dashboardBtn.TabIndex = 1;
+            dashboardBtn.Text = "Dashboard";
+            dashboardBtn.UseVisualStyleBackColor = true;
+            dashboardBtn.Click += dashboardBtn_Click;
+            // 
+            // studentBtn
+            // 
+            studentBtn.Location = new Point(37, 180);
+            studentBtn.Name = "studentBtn";
+            studentBtn.Size = new Size(124, 37);
+            studentBtn.TabIndex = 2;
+            studentBtn.Text = "Students";
+            studentBtn.UseVisualStyleBackColor = true;
+            studentBtn.Click += studentBtn_Click;
+            // 
+            // mainPanel
+            // 
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Location = new Point(200, 0);
+            mainPanel.Name = "mainPanel";
+            mainPanel.Size = new Size(812, 461);
+            mainPanel.TabIndex = 1;
             // 
             // Dashboard
             // 
@@ -119,24 +117,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(1012, 461);
-            Controls.Add(dashboardgroup);
+            Controls.Add(mainPanel);
+            Controls.Add(panel1);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Dashboard";
             Text = "Dashboard";
-            dashboardgroup.ResumeLayout(false);
-            dashboardgroup.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox dashboardgroup;
-        private Button Logout;
-        private Label titleName;
-        private Button logBtn;
+        private Panel panel1;
+        private Button dashboardBtn;
+        private Button studentBtn;
         private Button courseBtn;
-        private Button gradeBtn;
-        private Button studentsbtn;
+        private Button logsBtn;
+        private Button logoutbtn;
+        private Panel mainPanel;
     }
 }
