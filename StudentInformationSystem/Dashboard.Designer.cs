@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             logsBtn = new Button();
             titleName = new Label();
@@ -37,8 +38,8 @@
             studentBtn = new Button();
             mainPanel = new Panel();
             panel2 = new Panel();
-            label11 = new Label();
-            textBox7 = new TextBox();
+            dateTimeTextBox = new TextBox();
+            refreshbtn = new Button();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
@@ -48,14 +49,11 @@
             label5 = new Label();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
-            label4 = new Label();
             label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
             textBox3 = new TextBox();
-            textBox2 = new TextBox();
             textBox1 = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -155,8 +153,8 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(textBox7);
+            panel2.Controls.Add(dateTimeTextBox);
+            panel2.Controls.Add(refreshbtn);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
@@ -166,12 +164,8 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(textBox5);
             panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
             panel2.Location = new Point(18, 12);
             panel2.Name = "panel2";
@@ -179,27 +173,23 @@
             panel2.TabIndex = 0;
             panel2.Paint += panel2_Paint;
             // 
-            // label11
+            // dateTimeTextBox
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(248, 326);
-            label11.Name = "label11";
-            label11.RightToLeft = RightToLeft.No;
-            label11.Size = new Size(234, 25);
-            label11.TabIndex = 16;
-            label11.Text = "Total Graduating  Students";
+            dateTimeTextBox.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimeTextBox.Location = new Point(241, 106);
+            dateTimeTextBox.Name = "dateTimeTextBox";
+            dateTimeTextBox.Size = new Size(324, 43);
+            dateTimeTextBox.TabIndex = 18;
             // 
-            // textBox7
+            // refreshbtn
             // 
-            textBox7.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(310, 354);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(106, 43);
-            textBox7.TabIndex = 15;
-            textBox7.Text = "1000";
+            refreshbtn.Location = new Point(228, 294);
+            refreshbtn.Name = "refreshbtn";
+            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.TabIndex = 17;
+            refreshbtn.Text = "Refresh";
+            refreshbtn.UseVisualStyleBackColor = true;
+            refreshbtn.Click += button1_Click;
             // 
             // label10
             // 
@@ -232,7 +222,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(575, 226);
+            label8.Location = new Point(505, 253);
             label8.Name = "label8";
             label8.Size = new Size(125, 25);
             label8.TabIndex = 13;
@@ -241,7 +231,7 @@
             // textBox6
             // 
             textBox6.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(575, 254);
+            textBox6.Location = new Point(505, 281);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
@@ -253,7 +243,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(450, 226);
+            label7.Location = new Point(380, 253);
             label7.Name = "label7";
             label7.Size = new Size(126, 25);
             label7.TabIndex = 11;
@@ -263,7 +253,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(575, 137);
+            label6.Location = new Point(505, 164);
             label6.Name = "label6";
             label6.Size = new Size(130, 25);
             label6.TabIndex = 10;
@@ -273,7 +263,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(454, 137);
+            label5.Location = new Point(377, 164);
             label5.Name = "label5";
             label5.Size = new Size(122, 25);
             label5.TabIndex = 9;
@@ -283,7 +273,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(454, 254);
+            textBox5.Location = new Point(384, 281);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
@@ -294,7 +284,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(575, 168);
+            textBox4.Location = new Point(505, 195);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
@@ -302,72 +292,33 @@
             textBox4.TabIndex = 7;
             textBox4.Text = "1000";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(100, 226);
-            label4.Name = "label4";
-            label4.Size = new Size(191, 25);
-            label4.TabIndex = 6;
-            label4.Text = "Total Passed Students";
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(100, 140);
+            label3.Location = new Point(204, 167);
             label3.Name = "label3";
             label3.Size = new Size(129, 25);
             label3.TabIndex = 5;
             label3.Text = "Total Students";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(641, 38);
-            label2.Name = "label2";
-            label2.Size = new Size(79, 25);
-            label2.TabIndex = 4;
-            label2.Text = "8:36 PM";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(641, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(126, 25);
-            label1.TabIndex = 3;
-            label1.Text = "April 13, 2025";
+            label3.Click += label3_Click;
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(454, 168);
+            textBox3.Location = new Point(384, 195);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(106, 43);
             textBox3.TabIndex = 2;
             textBox3.Text = "1000";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(109, 254);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(106, 43);
-            textBox2.TabIndex = 1;
-            textBox2.Text = "1000";
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(109, 168);
+            textBox1.Location = new Point(213, 195);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
@@ -381,6 +332,12 @@
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -392,6 +349,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Dashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -412,25 +370,22 @@
         private Panel mainPanel;
         private Label titleName;
         private Panel panel2;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        public TextBox textBox1;
+        public TextBox textBox3;
         private Label label5;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private Label label4;
+        public TextBox textBox5;
+        public TextBox textBox4;
         private Label label3;
-        private Label label2;
-        private Label label1;
         private Label label8;
-        private TextBox textBox6;
+        public TextBox textBox6;
         private Label label7;
         private Label label6;
         private Label label9;
         private Label label10;
-        private Label label11;
-        private TextBox textBox7;
         private Button logsBtn;
         private FileSystemWatcher fileSystemWatcher1;
+        private Button refreshbtn;
+        private System.Windows.Forms.Timer timer1;
+        public TextBox dateTimeTextBox;
     }
 }

@@ -26,5 +26,10 @@ namespace StudentInformationSystem
         {
 
         }
+
+        private void Courses_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

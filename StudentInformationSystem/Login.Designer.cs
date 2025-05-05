@@ -28,97 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupLogin = new GroupBox();
-            forgotPass = new Label();
-            loginBtn = new Button();
-            label2 = new Label();
-            label1 = new Label();
-            password = new TextBox();
-            username = new TextBox();
             titleName = new Label();
-            textBox1 = new TextBox();
+            username = new TextBox();
+            passwordTxt = new TextBox();
+            usernameTxt = new TextBox();
+            label1 = new Label();
             label3 = new Label();
+            label2 = new Label();
+            loginBtn = new Button();
+            groupLogin = new GroupBox();
             groupLogin.SuspendLayout();
             SuspendLayout();
-            // 
-            // groupLogin
-            // 
-            groupLogin.BackColor = Color.LightSkyBlue;
-            groupLogin.Controls.Add(forgotPass);
-            groupLogin.Controls.Add(loginBtn);
-            groupLogin.Controls.Add(label2);
-            groupLogin.Controls.Add(label3);
-            groupLogin.Controls.Add(label1);
-            groupLogin.Controls.Add(textBox1);
-            groupLogin.Controls.Add(password);
-            groupLogin.Controls.Add(username);
-            groupLogin.Controls.Add(titleName);
-            groupLogin.Location = new Point(325, 37);
-            groupLogin.Name = "groupLogin";
-            groupLogin.Size = new Size(400, 357);
-            groupLogin.TabIndex = 0;
-            groupLogin.TabStop = false;
-            groupLogin.Enter += groupLogin_Enter;
-            // 
-            // forgotPass
-            // 
-            forgotPass.AutoSize = true;
-            forgotPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            forgotPass.ForeColor = SystemColors.InactiveCaptionText;
-            forgotPass.Location = new Point(204, 265);
-            forgotPass.Name = "forgotPass";
-            forgotPass.Size = new Size(104, 15);
-            forgotPass.TabIndex = 7;
-            forgotPass.Text = "Forgot Password?";
-            // 
-            // loginBtn
-            // 
-            loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            loginBtn.ForeColor = SystemColors.ControlDarkDark;
-            loginBtn.Location = new Point(136, 304);
-            loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(129, 34);
-            loginBtn.TabIndex = 6;
-            loginBtn.Text = "Login";
-            loginBtn.UseVisualStyleBackColor = true;
-            loginBtn.Click += loginBtn_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(95, 213);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Password:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(95, 155);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Username:";
-            // 
-            // password
-            // 
-            password.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            password.Location = new Point(95, 231);
-            password.Multiline = true;
-            password.Name = "password";
-            password.PasswordChar = '*';
-            password.Size = new Size(213, 31);
-            password.TabIndex = 3;
-            // 
-            // username
-            // 
-            username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            username.Location = new Point(95, 173);
-            username.Multiline = true;
-            username.Name = "username";
-            username.Size = new Size(213, 32);
-            username.TabIndex = 2;
             // 
             // titleName
             // 
@@ -133,14 +53,44 @@
             titleName.Text = "iSTUD";
             titleName.TextAlign = ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // username
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(92, 173);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(213, 32);
-            textBox1.TabIndex = 2;
+            username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            username.Location = new Point(95, 173);
+            username.Multiline = true;
+            username.Name = "username";
+            username.Size = new Size(213, 32);
+            username.TabIndex = 2;
+            // 
+            // passwordTxt
+            // 
+            passwordTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordTxt.Location = new Point(95, 231);
+            passwordTxt.Multiline = true;
+            passwordTxt.Name = "passwordTxt";
+            passwordTxt.PasswordChar = '*';
+            passwordTxt.Size = new Size(213, 31);
+            passwordTxt.TabIndex = 3;
+            passwordTxt.TextChanged += passwordTxt_TextChanged;
+            // 
+            // usernameTxt
+            // 
+            usernameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameTxt.Location = new Point(92, 173);
+            usernameTxt.Multiline = true;
+            usernameTxt.Name = "usernameTxt";
+            usernameTxt.Size = new Size(213, 32);
+            usernameTxt.TabIndex = 2;
+            usernameTxt.TextChanged += textBox1_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(95, 155);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Username:";
             // 
             // label3
             // 
@@ -150,6 +100,45 @@
             label3.Size = new Size(63, 15);
             label3.TabIndex = 4;
             label3.Text = "Username:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(95, 213);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Password:";
+            // 
+            // loginBtn
+            // 
+            loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            loginBtn.ForeColor = SystemColors.ControlDarkDark;
+            loginBtn.Location = new Point(136, 304);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new Size(129, 34);
+            loginBtn.TabIndex = 6;
+            loginBtn.Text = "Login";
+            loginBtn.UseVisualStyleBackColor = true;
+            loginBtn.Click += loginBtn_Click;
+            // 
+            // groupLogin
+            // 
+            groupLogin.BackColor = Color.LightSkyBlue;
+            groupLogin.Controls.Add(loginBtn);
+            groupLogin.Controls.Add(label2);
+            groupLogin.Controls.Add(label3);
+            groupLogin.Controls.Add(label1);
+            groupLogin.Controls.Add(usernameTxt);
+            groupLogin.Controls.Add(passwordTxt);
+            groupLogin.Controls.Add(username);
+            groupLogin.Controls.Add(titleName);
+            groupLogin.Location = new Point(325, 37);
+            groupLogin.Name = "groupLogin";
+            groupLogin.Size = new Size(400, 357);
+            groupLogin.TabIndex = 0;
+            groupLogin.TabStop = false;
+            groupLogin.Enter += groupLogin_Enter;
             // 
             // Login
             // 
@@ -161,6 +150,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
             groupLogin.ResumeLayout(false);
@@ -170,15 +160,14 @@
 
         #endregion
 
-        private GroupBox groupLogin;
         private Label titleName;
         private TextBox username;
-        private TextBox password;
-        private Label label2;
+        private TextBox passwordTxt;
+        private TextBox usernameTxt;
         private Label label1;
-        private Label forgotPass;
-        private Button loginBtn;
         private Label label3;
-        private TextBox textBox1;
+        private Label label2;
+        private Button loginBtn;
+        private GroupBox groupLogin;
     }
 }

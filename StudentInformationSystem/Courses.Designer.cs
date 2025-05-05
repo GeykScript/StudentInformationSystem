@@ -292,6 +292,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Courses";
             Text = "Courses";
+            Load += Courses_Load;
             ResumeLayout(false);
             PerformLayout();
         }
