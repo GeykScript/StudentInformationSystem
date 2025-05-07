@@ -98,7 +98,9 @@ d.department_name AS DEPARTMENT
 
         private void courseBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Courses());
+            Courses courses = new Courses();
+            courses.dateTimeTextBox2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+            loadform(courses);
         }
 
         private void logsBtn_Click(object sender, EventArgs e)

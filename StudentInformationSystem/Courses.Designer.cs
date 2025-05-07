@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label10 = new Label();
             label9 = new Label();
-            label2 = new Label();
-            label12 = new Label();
             label5 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
@@ -48,6 +47,8 @@
             label14 = new Label();
             textBox5 = new TextBox();
             label15 = new Label();
+            dateTimeTextBox2 = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label10
@@ -76,31 +77,11 @@
             label9.Text = "iSTUD";
             label9.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(645, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(79, 25);
-            label2.TabIndex = 57;
-            label2.Text = "8:36 PM";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(645, 40);
-            label12.Name = "label12";
-            label12.Size = new Size(126, 25);
-            label12.TabIndex = 56;
-            label12.Text = "April 13, 2025";
-            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(77, 190);
+            label5.Location = new Point(80, 235);
             label5.Name = "label5";
             label5.Size = new Size(132, 25);
             label5.TabIndex = 68;
@@ -110,7 +91,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(77, 227);
+            label3.Location = new Point(80, 272);
             label3.Name = "label3";
             label3.Size = new Size(63, 25);
             label3.TabIndex = 64;
@@ -120,7 +101,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(146, 218);
+            textBox1.Location = new Point(149, 263);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
@@ -132,7 +113,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(313, 190);
+            label1.Location = new Point(316, 235);
             label1.Name = "label1";
             label1.Size = new Size(180, 25);
             label1.TabIndex = 71;
@@ -142,7 +123,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(313, 227);
+            label4.Location = new Point(316, 272);
             label4.Name = "label4";
             label4.Size = new Size(63, 25);
             label4.TabIndex = 70;
@@ -151,7 +132,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(382, 218);
+            textBox2.Location = new Point(385, 263);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -163,7 +144,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(549, 190);
+            label6.Location = new Point(552, 235);
             label6.Name = "label6";
             label6.Size = new Size(139, 25);
             label6.TabIndex = 74;
@@ -173,7 +154,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(549, 227);
+            label7.Location = new Point(552, 272);
             label7.Name = "label7";
             label7.Size = new Size(63, 25);
             label7.TabIndex = 73;
@@ -182,7 +163,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(618, 218);
+            textBox3.Location = new Point(621, 263);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
@@ -194,7 +175,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(201, 303);
+            label8.Location = new Point(204, 348);
             label8.Name = "label8";
             label8.Size = new Size(207, 25);
             label8.TabIndex = 77;
@@ -204,7 +185,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(201, 340);
+            label11.Location = new Point(204, 385);
             label11.Name = "label11";
             label11.Size = new Size(63, 25);
             label11.TabIndex = 76;
@@ -213,7 +194,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(270, 331);
+            textBox4.Location = new Point(273, 376);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
@@ -225,7 +206,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(455, 312);
+            label13.Location = new Point(458, 357);
             label13.Name = "label13";
             label13.Size = new Size(219, 25);
             label13.TabIndex = 80;
@@ -235,7 +216,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(455, 349);
+            label14.Location = new Point(458, 394);
             label14.Name = "label14";
             label14.Size = new Size(63, 25);
             label14.TabIndex = 79;
@@ -244,7 +225,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(524, 340);
+            textBox5.Location = new Point(527, 385);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
@@ -256,12 +237,31 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(326, 130);
+            label15.Location = new Point(329, 175);
             label15.Name = "label15";
             label15.Size = new Size(192, 25);
             label15.TabIndex = 81;
             label15.Text = "AVAILABLE COURSES";
             label15.Click += label15_Click;
+            // 
+            // dateTimeTextBox2
+            // 
+            dateTimeTextBox2.BackColor = SystemColors.ButtonHighlight;
+            dateTimeTextBox2.BorderStyle = BorderStyle.None;
+            dateTimeTextBox2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimeTextBox2.Location = new Point(403, 111);
+            dateTimeTextBox2.Name = "dateTimeTextBox2";
+            dateTimeTextBox2.ReadOnly = true;
+            dateTimeTextBox2.ScrollBars = ScrollBars.Vertical;
+            dateTimeTextBox2.Size = new Size(324, 36);
+            dateTimeTextBox2.TabIndex = 82;
+            dateTimeTextBox2.TextChanged += dateTimeTextBox2_TextChanged;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Courses
             // 
@@ -269,6 +269,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(dateTimeTextBox2);
             Controls.Add(label15);
             Controls.Add(label13);
             Controls.Add(label14);
@@ -287,8 +288,6 @@
             Controls.Add(textBox1);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(label2);
-            Controls.Add(label12);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Courses";
             Text = "Courses";
@@ -301,8 +300,6 @@
 
         private Label label10;
         private Label label9;
-        private Label label2;
-        private Label label12;
         private Label label5;
         private Label label3;
         private TextBox textBox1;
@@ -319,5 +316,7 @@
         private Label label14;
         private TextBox textBox5;
         private Label label15;
+        public TextBox dateTimeTextBox2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

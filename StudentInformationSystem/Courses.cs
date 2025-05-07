@@ -31,5 +31,15 @@ namespace StudentInformationSystem
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dateTimeTextBox2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+        }
+
+        private void dateTimeTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
