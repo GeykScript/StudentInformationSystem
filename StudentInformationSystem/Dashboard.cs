@@ -100,6 +100,55 @@ d.department_name AS DEPARTMENT
         {
             Courses courses = new Courses();
             courses.dateTimeTextBox2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"
+    SELECT course_id, COUNT(*) as student_count 
+    FROM students 
+    WHERE course_id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) 
+    GROUP BY course_id";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    Dictionary<int, int> courseCounts = new Dictionary<int, int>();
+
+                    while (reader.Read())
+                    {
+                        int courseId = reader.GetInt32("course_id");
+                        int count = reader.GetInt32("student_count");
+                        courseCounts[courseId] = count;
+                    }
+
+                    conn.Close();
+
+                    // Assign the values to the appropriate text boxes
+                    courses.bsitTxt.Text = courseCounts.ContainsKey(1) ? courseCounts[1].ToString() : "0";
+                    courses.sportTxt.Text = courseCounts.ContainsKey(2) ? courseCounts[2].ToString() : "0";
+                    courses.cengTxt.Text = courseCounts.ContainsKey(3) ? courseCounts[3].ToString() : "0";
+                    courses.bioTxt.Text = courseCounts.ContainsKey(4) ? courseCounts[4].ToString() : "0";
+                    courses.chemTxt.Text = courseCounts.ContainsKey(5) ? courseCounts[5].ToString() : "0";
+                    courses.csTxt.Text = courseCounts.ContainsKey(6) ? courseCounts[6].ToString() : "0";
+                    courses.ecoTxt.Text = courseCounts.ContainsKey(7) ? courseCounts[7].ToString() : "0";
+                    courses.psychoTxt.Text = courseCounts.ContainsKey(8) ? courseCounts[8].ToString() : "0";
+                    courses.nursingTxt.Text = courseCounts.ContainsKey(9) ? courseCounts[9].ToString() : "0";
+                    courses.litTxt.Text = courseCounts.ContainsKey(10) ? courseCounts[10].ToString() : "0";
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
             loadform(courses);
         }
 

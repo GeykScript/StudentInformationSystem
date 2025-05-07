@@ -54,6 +54,8 @@
             textBox1 = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
+            paymentsBtn = new Button();
+            enrollmentsBtn = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -63,6 +65,8 @@
             // panel1
             // 
             panel1.BackColor = Color.LightSkyBlue;
+            panel1.Controls.Add(enrollmentsBtn);
+            panel1.Controls.Add(paymentsBtn);
             panel1.Controls.Add(logsBtn);
             panel1.Controls.Add(titleName);
             panel1.Controls.Add(logoutbtn);
@@ -78,7 +82,7 @@
             // 
             // logsBtn
             // 
-            logsBtn.Location = new Point(37, 266);
+            logsBtn.Location = new Point(37, 350);
             logsBtn.Name = "logsBtn";
             logsBtn.Size = new Size(124, 37);
             logsBtn.TabIndex = 7;
@@ -341,6 +345,24 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // paymentsBtn
+            // 
+            paymentsBtn.Location = new Point(37, 266);
+            paymentsBtn.Name = "paymentsBtn";
+            paymentsBtn.Size = new Size(124, 37);
+            paymentsBtn.TabIndex = 8;
+            paymentsBtn.Text = "Payments";
+            paymentsBtn.UseVisualStyleBackColor = true;
+            // 
+            // enrollmentsBtn
+            // 
+            enrollmentsBtn.Location = new Point(37, 309);
+            enrollmentsBtn.Name = "enrollmentsBtn";
+            enrollmentsBtn.Size = new Size(124, 37);
+            enrollmentsBtn.TabIndex = 9;
+            enrollmentsBtn.Text = "Enrollments";
+            enrollmentsBtn.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -390,5 +412,7 @@
         private Button refreshbtn;
         private System.Windows.Forms.Timer timer1;
         public TextBox dateTimeTextBox;
+        private Button paymentsBtn;
+        private Button enrollmentsBtn;
     }
 }
