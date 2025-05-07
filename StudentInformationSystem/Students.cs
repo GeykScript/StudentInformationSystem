@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace StudentInformationSystem
 {
@@ -16,22 +17,6 @@ namespace StudentInformationSystem
         {
             InitializeComponent();
         }
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView1.Rows.Add("1", "Doe", "John", "3rd Year", "IT Dept", "IT");
-            dataGridView1.Rows.Add("2", "Smith", "Jane", "2nd Year", "CS Dept", "CS");
-            dataGridView1.Rows.Add("3", "Brown", "Emily", "4th Year", "SE Dept", "SE");
-            dataGridView1.Rows.Add("4", "Johnson", "Michael", "1st Year", "CE Dept", "CE");
-            dataGridView1.Rows.Add("5", "Williams", "Sarah", "3rd Year", "IT Dept", "IT");
-            dataGridView1.Rows.Add("6", "Jones", "David", "2nd Year", "CS Dept", "CS");
-            dataGridView1.Rows.Add("7", "Garcia", "Sophia", "4th Year", "SE Dept", "SE");
-            dataGridView1.Rows.Add("8", "Martinez", "Daniel", "1st Year", "CE Dept", "CE");
-            dataGridView1.Rows.Add("9", "Hernandez", "Olivia", "3rd Year", "IT Dept", "IT");
-            dataGridView1.Rows.Add("10", "Lopez", "James", "2nd Year", "CS Dept", "CS");
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -48,7 +33,57 @@ namespace StudentInformationSystem
         {
             Edit editstudent = new Edit();
             editstudent.Show();
-           
+
+        }
+
+        private void dateTimeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dateTimeTextBox3.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+        }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+        SELECT 
+           s.student_id AS ID,
+s.last_name AS `Last Name`, 
+s.first_name AS `First Name`, 
+c.course_name AS Course,
+sy.year_level AS `Year Level`,
+d.department_name AS DEPARTMENT
+
+        FROM 
+            students s
+        JOIN 
+            courses c ON s.course_id = c.course_id
+        JOIN 
+            departments d ON c.department_id = d.department_id
+        JOIN 
+            student_yearlevels sy ON s.student_id = sy.student_id";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }

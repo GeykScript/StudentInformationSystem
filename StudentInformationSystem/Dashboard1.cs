@@ -145,5 +145,10 @@ namespace StudentInformationSystem
             dateTimeTextBox2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
 
         }
+
+        private void Dashboard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

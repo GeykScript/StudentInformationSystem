@@ -175,10 +175,13 @@
             // 
             // dateTimeTextBox
             // 
+            dateTimeTextBox.BackColor = SystemColors.ButtonHighlight;
+            dateTimeTextBox.BorderStyle = BorderStyle.None;
             dateTimeTextBox.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimeTextBox.Location = new Point(241, 106);
             dateTimeTextBox.Name = "dateTimeTextBox";
-            dateTimeTextBox.Size = new Size(324, 43);
+            dateTimeTextBox.ReadOnly = true;
+            dateTimeTextBox.Size = new Size(324, 36);
             dateTimeTextBox.TabIndex = 18;
             // 
             // refreshbtn

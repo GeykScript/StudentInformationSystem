@@ -28,22 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label10 = new Label();
             label9 = new Label();
-            label2 = new Label();
-            label12 = new Label();
             addstudent = new Button();
-            dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            LastName = new DataGridViewTextBoxColumn();
-            Fname = new DataGridViewTextBoxColumn();
-            course = new DataGridViewTextBoxColumn();
-            year = new DataGridViewTextBoxColumn();
-            dept = new DataGridViewTextBoxColumn();
             editstudent = new Button();
             btnPanel = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dateTimeTextBox3 = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            refreshbtn = new Button();
+            dataGridView1 = new DataGridView();
             btnPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -72,26 +68,6 @@
             label9.Text = "iSTUD";
             label9.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(645, 58);
-            label2.Name = "label2";
-            label2.Size = new Size(79, 25);
-            label2.TabIndex = 40;
-            label2.Text = "8:36 PM";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(645, 33);
-            label12.Name = "label12";
-            label12.Size = new Size(126, 25);
-            label12.TabIndex = 39;
-            label12.Text = "April 13, 2025";
-            // 
             // addstudent
             // 
             addstudent.BackColor = Color.LightSkyBlue;
@@ -102,52 +78,6 @@
             addstudent.Text = "Add Student";
             addstudent.UseVisualStyleBackColor = false;
             addstudent.Click += button1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, LastName, Fname, course, year, dept });
-            dataGridView1.Location = new Point(68, 169);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(642, 235);
-            dataGridView1.TabIndex = 54;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            LastName.HeaderText = "Last Name";
-            LastName.Name = "LastName";
-            LastName.ReadOnly = true;
-            // 
-            // Fname
-            // 
-            Fname.HeaderText = "First Name";
-            Fname.Name = "Fname";
-            Fname.ReadOnly = true;
-            // 
-            // course
-            // 
-            course.HeaderText = "Course ";
-            course.Name = "course";
-            course.ReadOnly = true;
-            // 
-            // year
-            // 
-            year.HeaderText = "Year Level";
-            year.Name = "year";
-            year.ReadOnly = true;
-            // 
-            // dept
-            // 
-            dept.HeaderText = "Department";
-            dept.Name = "dept";
-            dept.ReadOnly = true;
             // 
             // editstudent
             // 
@@ -164,11 +94,47 @@
             // 
             btnPanel.Controls.Add(addstudent);
             btnPanel.Controls.Add(editstudent);
-            btnPanel.Location = new Point(496, 113);
+            btnPanel.Location = new Point(499, 208);
             btnPanel.Name = "btnPanel";
             btnPanel.Size = new Size(214, 50);
             btnPanel.TabIndex = 56;
             btnPanel.Paint += btnPanel_Paint;
+            // 
+            // dateTimeTextBox3
+            // 
+            dateTimeTextBox3.BackColor = SystemColors.ButtonHighlight;
+            dateTimeTextBox3.BorderStyle = BorderStyle.None;
+            dateTimeTextBox3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimeTextBox3.Location = new Point(76, 142);
+            dateTimeTextBox3.Name = "dateTimeTextBox3";
+            dateTimeTextBox3.ReadOnly = true;
+            dateTimeTextBox3.Size = new Size(324, 36);
+            dateTimeTextBox3.TabIndex = 57;
+            dateTimeTextBox3.TextChanged += dateTimeTextBox_TextChanged;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // refreshbtn
+            // 
+            refreshbtn.Location = new Point(76, 229);
+            refreshbtn.Name = "refreshbtn";
+            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.TabIndex = 58;
+            refreshbtn.Text = "Refresh";
+            refreshbtn.UseVisualStyleBackColor = true;
+            refreshbtn.Click += refreshbtn_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(53, 264);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(657, 150);
+            dataGridView1.TabIndex = 59;
             // 
             // Students
             // 
@@ -176,17 +142,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnPanel);
             Controls.Add(dataGridView1);
+            Controls.Add(refreshbtn);
+            Controls.Add(dateTimeTextBox3);
+            Controls.Add(btnPanel);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(label2);
-            Controls.Add(label12);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Students";
             Text = "Students";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             btnPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,17 +161,13 @@
 
         private Label label10;
         private Label label9;
-        private Label label2;
-        private Label label12;
         private Button addstudent;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn LastName;
-        private DataGridViewTextBoxColumn Fname;
-        private DataGridViewTextBoxColumn course;
-        private DataGridViewTextBoxColumn year;
-        private DataGridViewTextBoxColumn dept;
         private Button editstudent;
         private Panel btnPanel;
+        public TextBox dateTimeTextBox;
+        private System.Windows.Forms.Timer timer1;
+        public TextBox dateTimeTextBox3;
+        private Button refreshbtn;
+        public DataGridView dataGridView1;
     }
 }

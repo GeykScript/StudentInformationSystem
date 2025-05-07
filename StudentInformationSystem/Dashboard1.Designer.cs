@@ -229,6 +229,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dashboard1";
             Text = "Dashboard1";
+            Load += Dashboard1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

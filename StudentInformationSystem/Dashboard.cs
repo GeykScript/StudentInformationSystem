@@ -52,8 +52,49 @@ namespace StudentInformationSystem
 
         private void studentBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Students());
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+        SELECT 
+s.student_id AS ID,
+s.last_name AS `Last Name`, 
+s.first_name AS `First Name`, 
+c.course_name AS Course,
+sy.year_level AS `Year Level`,
+d.department_name AS DEPARTMENT
+
+        FROM 
+            students s
+        JOIN 
+            courses c ON s.course_id = c.course_id
+        JOIN 
+            departments d ON c.department_id = d.department_id
+        JOIN 
+            student_yearlevels sy ON s.student_id = sy.student_id";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Students studentsForm = new Students();
+                    studentsForm.dataGridView1.DataSource = dt;
+                    studentsForm.dateTimeTextBox3.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+                    // Show the form or load it in a panel/container
+                    loadform(studentsForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
+
 
         private void courseBtn_Click(object sender, EventArgs e)
         {
