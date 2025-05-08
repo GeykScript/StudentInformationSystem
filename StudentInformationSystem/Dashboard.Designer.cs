@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            enrollmentsBtn = new Button();
+            paymentsBtn = new Button();
             logsBtn = new Button();
             titleName = new Label();
             logoutbtn = new Button();
@@ -51,11 +53,9 @@
             textBox4 = new TextBox();
             label3 = new Label();
             textBox3 = new TextBox();
-            textBox1 = new TextBox();
+            paymentBtn = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
-            paymentsBtn = new Button();
-            enrollmentsBtn = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -79,6 +79,25 @@
             panel1.Size = new Size(200, 461);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // enrollmentsBtn
+            // 
+            enrollmentsBtn.Location = new Point(37, 309);
+            enrollmentsBtn.Name = "enrollmentsBtn";
+            enrollmentsBtn.Size = new Size(124, 37);
+            enrollmentsBtn.TabIndex = 9;
+            enrollmentsBtn.Text = "Enrollments";
+            enrollmentsBtn.UseVisualStyleBackColor = true;
+            // 
+            // paymentsBtn
+            // 
+            paymentsBtn.Location = new Point(37, 266);
+            paymentsBtn.Name = "paymentsBtn";
+            paymentsBtn.Size = new Size(124, 37);
+            paymentsBtn.TabIndex = 8;
+            paymentsBtn.Text = "Payments";
+            paymentsBtn.UseVisualStyleBackColor = true;
+            paymentsBtn.Click += paymentsBtn_Click;
             // 
             // logsBtn
             // 
@@ -170,7 +189,7 @@
             panel2.Controls.Add(textBox4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(paymentBtn);
             panel2.Location = new Point(18, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(783, 435);
@@ -322,17 +341,17 @@
             textBox3.Text = "1000";
             textBox3.TextChanged += textBox3_TextChanged;
             // 
-            // textBox1
+            // paymentBtn
             // 
-            textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(213, 195);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(106, 43);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "1000";
-            textBox1.TextChanged += textBox1_TextChanged;
+            paymentBtn.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            paymentBtn.Location = new Point(213, 195);
+            paymentBtn.Multiline = true;
+            paymentBtn.Name = "paymentBtn";
+            paymentBtn.ReadOnly = true;
+            paymentBtn.Size = new Size(106, 43);
+            paymentBtn.TabIndex = 0;
+            paymentBtn.Text = "1000";
+            paymentBtn.TextChanged += textBox1_TextChanged;
             // 
             // fileSystemWatcher1
             // 
@@ -344,24 +363,6 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
-            // 
-            // paymentsBtn
-            // 
-            paymentsBtn.Location = new Point(37, 266);
-            paymentsBtn.Name = "paymentsBtn";
-            paymentsBtn.Size = new Size(124, 37);
-            paymentsBtn.TabIndex = 8;
-            paymentsBtn.Text = "Payments";
-            paymentsBtn.UseVisualStyleBackColor = true;
-            // 
-            // enrollmentsBtn
-            // 
-            enrollmentsBtn.Location = new Point(37, 309);
-            enrollmentsBtn.Name = "enrollmentsBtn";
-            enrollmentsBtn.Size = new Size(124, 37);
-            enrollmentsBtn.TabIndex = 9;
-            enrollmentsBtn.Text = "Enrollments";
-            enrollmentsBtn.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
@@ -395,7 +396,7 @@
         private Panel mainPanel;
         private Label titleName;
         private Panel panel2;
-        public TextBox textBox1;
+        public TextBox paymentBtn;
         public TextBox textBox3;
         private Label label5;
         public TextBox textBox5;

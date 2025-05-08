@@ -45,7 +45,7 @@ namespace StudentInformationSystem
 
                                     // Show dashboard
                                     Dashboard dashboardPage = new Dashboard();
-                                    dashboardPage.textBox1.Text = result.ToString(); // Assuming textBox1 is public
+                                    dashboardPage.paymentBtn.Text = result.ToString(); // Assuming textBox1 is public
                                     string query2 = "SELECT COUNT(*) FROM student_yearlevels WHERE year_level = 1;";
                                     MySqlCommand cmd2 = new MySqlCommand(query2, conn);
                                     object result2 = cmd2.ExecuteScalar();

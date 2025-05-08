@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,7 +70,10 @@ d.department_name AS DEPARTMENT
         JOIN 
             departments d ON c.department_id = d.department_id
         JOIN 
-            student_yearlevels sy ON s.student_id = sy.student_id";
+            student_yearlevels sy ON s.student_id = sy.student_id
+        ORDER BY
+        ID;
+        ";
 
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
@@ -200,7 +204,7 @@ d.department_name AS DEPARTMENT
                     MySqlCommand cmd1 = new MySqlCommand(query1, conn);
                     object result1 = cmd1.ExecuteScalar();
 
-                    textBox1.Text = result1.ToString();
+                    paymentBtn.Text = result1.ToString();
 
 
                     string query2 = "SELECT COUNT(*) FROM student_yearlevels WHERE year_level = 1;";
@@ -257,6 +261,38 @@ d.department_name AS DEPARTMENT
         {
             dateTimeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
 
+        }
+
+        private void paymentsBtn_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+select ID,first_name,last_name, total_payment
+from student_totalpayments sp
+join students s on sp.student_id = s.student_id";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Payment studentPayment = new Payment();
+                    studentPayment.dataGridView1.DataSource = dt;
+                    studentPayment.dateTimeTextBox.Text = DateTime.Now.ToString("yyyy -MM-dd hh:mm:ss tt");
+
+                    // Show the form or load it in a panel/container
+                    loadform(studentPayment);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }

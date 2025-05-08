@@ -1,6 +1,6 @@
 ﻿namespace StudentInformationSystem
 {
-    partial class Students
+    partial class Payment
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,10 @@
             components = new System.ComponentModel.Container();
             label10 = new Label();
             label9 = new Label();
-            addstudent = new Button();
-            editstudent = new Button();
-            btnPanel = new Panel();
-            dateTimeTextBox3 = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
-            refreshbtn = new Button();
+            dateTimeTextBox = new TextBox();
             dataGridView1 = new DataGridView();
-            btnPanel.SuspendLayout();
+            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -48,10 +44,10 @@
             label10.BackColor = Color.LightSkyBlue;
             label10.Font = new Font("Sitka Banner", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(193, 48);
+            label10.Location = new Point(206, 53);
             label10.Name = "label10";
             label10.Size = new Size(426, 35);
-            label10.TabIndex = 51;
+            label10.TabIndex = 53;
             label10.Text = "Student Information Management System";
             label10.TextAlign = ContentAlignment.TopCenter;
             // 
@@ -61,100 +57,64 @@
             label9.BackColor = Color.LightSkyBlue;
             label9.Font = new Font("Sitka Banner", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(30, 33);
+            label9.Location = new Point(43, 38);
             label9.Name = "label9";
             label9.Size = new Size(157, 69);
-            label9.TabIndex = 43;
+            label9.TabIndex = 52;
             label9.Text = "iSTUD";
             label9.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // addstudent
-            // 
-            addstudent.BackColor = Color.LightSkyBlue;
-            addstudent.Location = new Point(3, 3);
-            addstudent.Name = "addstudent";
-            addstudent.Size = new Size(116, 41);
-            addstudent.TabIndex = 53;
-            addstudent.Text = "Add Student";
-            addstudent.UseVisualStyleBackColor = false;
-            addstudent.Click += button1_Click;
-            // 
-            // editstudent
-            // 
-            editstudent.BackColor = Color.LightYellow;
-            editstudent.Location = new Point(125, 3);
-            editstudent.Name = "editstudent";
-            editstudent.Size = new Size(86, 41);
-            editstudent.TabIndex = 55;
-            editstudent.Text = "Edit ";
-            editstudent.UseVisualStyleBackColor = false;
-            editstudent.Click += editstudent_Click;
-            // 
-            // btnPanel
-            // 
-            btnPanel.Controls.Add(addstudent);
-            btnPanel.Controls.Add(editstudent);
-            btnPanel.Location = new Point(499, 208);
-            btnPanel.Name = "btnPanel";
-            btnPanel.Size = new Size(214, 50);
-            btnPanel.TabIndex = 56;
-            btnPanel.Paint += btnPanel_Paint;
-            // 
-            // dateTimeTextBox3
-            // 
-            dateTimeTextBox3.BackColor = SystemColors.ButtonHighlight;
-            dateTimeTextBox3.BorderStyle = BorderStyle.None;
-            dateTimeTextBox3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimeTextBox3.Location = new Point(76, 142);
-            dateTimeTextBox3.Name = "dateTimeTextBox3";
-            dateTimeTextBox3.ReadOnly = true;
-            dateTimeTextBox3.Size = new Size(324, 36);
-            dateTimeTextBox3.TabIndex = 57;
-            dateTimeTextBox3.TextChanged += dateTimeTextBox_TextChanged;
             // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
             // 
-            // refreshbtn
+            // dateTimeTextBox
             // 
-            refreshbtn.Location = new Point(76, 229);
-            refreshbtn.Name = "refreshbtn";
-            refreshbtn.Size = new Size(75, 23);
-            refreshbtn.TabIndex = 58;
-            refreshbtn.Text = "Refresh";
-            refreshbtn.UseVisualStyleBackColor = true;
-            refreshbtn.Click += refreshbtn_Click;
+            dateTimeTextBox.BackColor = SystemColors.ButtonHighlight;
+            dateTimeTextBox.BorderStyle = BorderStyle.None;
+            dateTimeTextBox.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimeTextBox.Location = new Point(235, 133);
+            dateTimeTextBox.Name = "dateTimeTextBox";
+            dateTimeTextBox.ReadOnly = true;
+            dateTimeTextBox.Size = new Size(324, 36);
+            dateTimeTextBox.TabIndex = 54;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = SystemColors.ControlDark;
-            dataGridView1.Location = new Point(53, 264);
+            dataGridView1.Location = new Point(170, 250);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(657, 150);
-            dataGridView1.TabIndex = 59;
+            dataGridView1.Size = new Size(445, 150);
+            dataGridView1.TabIndex = 55;
             // 
-            // Students
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(288, 203);
+            label15.Name = "label15";
+            label15.RightToLeft = RightToLeft.Yes;
+            label15.Size = new Size(212, 25);
+            label15.TabIndex = 82;
+            label15.Text = "Student Total Payments";
+            // 
+            // Payment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(label15);
             Controls.Add(dataGridView1);
-            Controls.Add(refreshbtn);
-            Controls.Add(dateTimeTextBox3);
-            Controls.Add(btnPanel);
+            Controls.Add(dateTimeTextBox);
             Controls.Add(label10);
             Controls.Add(label9);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Students";
-            Text = "Students";
-            btnPanel.ResumeLayout(false);
+            Name = "Payment";
+            Text = "Payment";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -164,13 +124,9 @@
 
         private Label label10;
         private Label label9;
-        private Button addstudent;
-        private Button editstudent;
-        private Panel btnPanel;
-        public TextBox dateTimeTextBox;
         private System.Windows.Forms.Timer timer1;
-        public TextBox dateTimeTextBox3;
-        private Button refreshbtn;
+        public TextBox dateTimeTextBox;
         public DataGridView dataGridView1;
+        private Label label15;
     }
 }
