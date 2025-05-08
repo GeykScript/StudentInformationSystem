@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            usersbtn = new Button();
             enrollmentsBtn = new Button();
             paymentsBtn = new Button();
             logsBtn = new Button();
@@ -56,7 +57,6 @@
             paymentBtn = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
-            usersbtn = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -81,6 +81,16 @@
             panel1.Size = new Size(200, 496);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // usersbtn
+            // 
+            usersbtn.Location = new Point(37, 393);
+            usersbtn.Name = "usersbtn";
+            usersbtn.Size = new Size(124, 37);
+            usersbtn.TabIndex = 10;
+            usersbtn.Text = "Users";
+            usersbtn.UseVisualStyleBackColor = true;
+            usersbtn.Click += usersbtn_Click;
             // 
             // enrollmentsBtn
             // 
@@ -365,15 +375,6 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
-            // 
-            // usersbtn
-            // 
-            usersbtn.Location = new Point(37, 393);
-            usersbtn.Name = "usersbtn";
-            usersbtn.Size = new Size(124, 37);
-            usersbtn.TabIndex = 10;
-            usersbtn.Text = "Users";
-            usersbtn.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 

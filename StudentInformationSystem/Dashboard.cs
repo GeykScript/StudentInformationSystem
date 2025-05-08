@@ -294,5 +294,10 @@ join students s on sp.student_id = s.student_id";
                 }
             }
         }
+
+        private void usersbtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Users());
+        }
     }
 }
