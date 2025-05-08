@@ -35,6 +35,7 @@
             dateTimeTextBox = new TextBox();
             dataGridView1 = new DataGridView();
             label15 = new Label();
+            refreshbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -101,12 +102,23 @@
             label15.TabIndex = 82;
             label15.Text = "Student Total Payments";
             // 
+            // refreshbtn
+            // 
+            refreshbtn.Location = new Point(182, 204);
+            refreshbtn.Name = "refreshbtn";
+            refreshbtn.Size = new Size(100, 28);
+            refreshbtn.TabIndex = 83;
+            refreshbtn.Text = "Refresh";
+            refreshbtn.UseVisualStyleBackColor = true;
+            refreshbtn.Click += refreshbtn_Click;
+            // 
             // Payment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(refreshbtn);
             Controls.Add(label15);
             Controls.Add(dataGridView1);
             Controls.Add(dateTimeTextBox);
@@ -128,5 +140,6 @@
         public TextBox dateTimeTextBox;
         public DataGridView dataGridView1;
         private Label label15;
+        private Button refreshbtn;
     }
 }

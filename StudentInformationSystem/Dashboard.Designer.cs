@@ -56,6 +56,7 @@
             paymentBtn = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
+            usersbtn = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -65,6 +66,7 @@
             // panel1
             // 
             panel1.BackColor = Color.LightSkyBlue;
+            panel1.Controls.Add(usersbtn);
             panel1.Controls.Add(enrollmentsBtn);
             panel1.Controls.Add(paymentsBtn);
             panel1.Controls.Add(logsBtn);
@@ -76,7 +78,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 461);
+            panel1.Size = new Size(200, 496);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -127,7 +129,7 @@
             logoutbtn.BackColor = Color.SteelBlue;
             logoutbtn.BackgroundImageLayout = ImageLayout.None;
             logoutbtn.ForeColor = SystemColors.ButtonHighlight;
-            logoutbtn.Location = new Point(37, 393);
+            logoutbtn.Location = new Point(37, 447);
             logoutbtn.Name = "logoutbtn";
             logoutbtn.Size = new Size(124, 37);
             logoutbtn.TabIndex = 5;
@@ -171,7 +173,7 @@
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(200, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(812, 461);
+            mainPanel.Size = new Size(812, 496);
             mainPanel.TabIndex = 1;
             // 
             // panel2
@@ -364,12 +366,21 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // usersbtn
+            // 
+            usersbtn.Location = new Point(37, 393);
+            usersbtn.Name = "usersbtn";
+            usersbtn.Size = new Size(124, 37);
+            usersbtn.TabIndex = 10;
+            usersbtn.Text = "Users";
+            usersbtn.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1012, 461);
+            ClientSize = new Size(1012, 496);
             Controls.Add(mainPanel);
             Controls.Add(panel1);
             MaximizeBox = false;
@@ -415,5 +426,6 @@
         public TextBox dateTimeTextBox;
         private Button paymentsBtn;
         private Button enrollmentsBtn;
+        private Button usersbtn;
     }
 }
