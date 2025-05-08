@@ -110,5 +110,13 @@ namespace StudentInformationSystem
         {
 
         }
+
+        private void forgotbtn_Click(object sender, EventArgs e)
+        {
+
+            ForgotPassword forgotPasswordPage = new ForgotPassword();
+            forgotPasswordPage.Show();
+            this.Hide();
+        }
     }
 }

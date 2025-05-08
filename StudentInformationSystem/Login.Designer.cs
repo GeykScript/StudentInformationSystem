@@ -37,6 +37,7 @@
             label2 = new Label();
             loginBtn = new Button();
             groupLogin = new GroupBox();
+            forgotbtn = new Button();
             groupLogin.SuspendLayout();
             SuspendLayout();
             // 
@@ -114,7 +115,7 @@
             // 
             loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = SystemColors.ControlDarkDark;
-            loginBtn.Location = new Point(136, 304);
+            loginBtn.Location = new Point(140, 320);
             loginBtn.Name = "loginBtn";
             loginBtn.Size = new Size(129, 34);
             loginBtn.TabIndex = 6;
@@ -125,6 +126,7 @@
             // groupLogin
             // 
             groupLogin.BackColor = Color.LightSkyBlue;
+            groupLogin.Controls.Add(forgotbtn);
             groupLogin.Controls.Add(loginBtn);
             groupLogin.Controls.Add(label2);
             groupLogin.Controls.Add(label3);
@@ -135,10 +137,29 @@
             groupLogin.Controls.Add(titleName);
             groupLogin.Location = new Point(325, 37);
             groupLogin.Name = "groupLogin";
-            groupLogin.Size = new Size(400, 357);
+            groupLogin.Size = new Size(400, 378);
             groupLogin.TabIndex = 0;
             groupLogin.TabStop = false;
             groupLogin.Enter += groupLogin_Enter;
+            // 
+            // forgotbtn
+            // 
+            forgotbtn.BackColor = Color.Transparent;
+            forgotbtn.BackgroundImageLayout = ImageLayout.None;
+            forgotbtn.Cursor = Cursors.Hand;
+            forgotbtn.FlatAppearance.BorderColor = Color.LightSkyBlue;
+            forgotbtn.FlatAppearance.MouseDownBackColor = Color.LightSkyBlue;
+            forgotbtn.FlatAppearance.MouseOverBackColor = Color.LightSkyBlue;
+            forgotbtn.FlatStyle = FlatStyle.Flat;
+            forgotbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            forgotbtn.ForeColor = Color.SteelBlue;
+            forgotbtn.Location = new Point(186, 264);
+            forgotbtn.Name = "forgotbtn";
+            forgotbtn.Size = new Size(136, 34);
+            forgotbtn.TabIndex = 7;
+            forgotbtn.Text = "Forgot Password?";
+            forgotbtn.UseVisualStyleBackColor = false;
+            forgotbtn.Click += forgotbtn_Click;
             // 
             // Login
             // 
@@ -169,5 +190,6 @@
         private Label label2;
         private Button loginBtn;
         private GroupBox groupLogin;
+        private Button forgotbtn;
     }
 }

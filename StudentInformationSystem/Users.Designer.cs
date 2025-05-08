@@ -232,7 +232,7 @@
             // 
             submitbtn.Location = new Point(535, 362);
             submitbtn.Name = "submitbtn";
-            submitbtn.Size = new Size(75, 23);
+            submitbtn.Size = new Size(116, 31);
             submitbtn.TabIndex = 97;
             submitbtn.Text = "Submit";
             submitbtn.UseVisualStyleBackColor = true;
