@@ -49,6 +49,9 @@
             answertxt = new TextBox();
             label7 = new Label();
             usernameTxt2 = new TextBox();
+            label8 = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -81,7 +84,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(197, 102);
+            label15.Location = new Point(390, 118);
             label15.Name = "label15";
             label15.Size = new Size(158, 25);
             label15.TabIndex = 82;
@@ -90,48 +93,48 @@
             // usernameTxt
             // 
             usernameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTxt.Location = new Point(168, 156);
+            usernameTxt.Location = new Point(395, 176);
             usernameTxt.Multiline = true;
             usernameTxt.Name = "usernameTxt";
-            usernameTxt.Size = new Size(213, 32);
+            usernameTxt.Size = new Size(153, 32);
             usernameTxt.TabIndex = 83;
             usernameTxt.TextChanged += usernameTxt_TextChanged;
             // 
             // passTxt
             // 
             passTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passTxt.Location = new Point(168, 216);
+            passTxt.Location = new Point(395, 236);
             passTxt.Multiline = true;
             passTxt.Name = "passTxt";
             passTxt.PasswordChar = '*';
-            passTxt.Size = new Size(213, 32);
+            passTxt.Size = new Size(153, 32);
             passTxt.TabIndex = 84;
             // 
             // newpassTxt
             // 
             newpassTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            newpassTxt.Location = new Point(168, 269);
+            newpassTxt.Location = new Point(395, 289);
             newpassTxt.Multiline = true;
             newpassTxt.Name = "newpassTxt";
             newpassTxt.PasswordChar = '*';
-            newpassTxt.Size = new Size(213, 32);
+            newpassTxt.Size = new Size(153, 32);
             newpassTxt.TabIndex = 85;
             // 
             // confirmpassTxt
             // 
             confirmpassTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            confirmpassTxt.Location = new Point(168, 322);
+            confirmpassTxt.Location = new Point(395, 342);
             confirmpassTxt.Multiline = true;
             confirmpassTxt.Name = "confirmpassTxt";
             confirmpassTxt.PasswordChar = '*';
-            confirmpassTxt.Size = new Size(213, 32);
+            confirmpassTxt.Size = new Size(153, 32);
             confirmpassTxt.TabIndex = 86;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(489, 107);
+            label1.Location = new Point(598, 116);
             label1.Name = "label1";
             label1.Size = new Size(171, 25);
             label1.TabIndex = 87;
@@ -139,9 +142,9 @@
             // 
             // saveBtn
             // 
-            saveBtn.Location = new Point(197, 360);
+            saveBtn.Location = new Point(395, 380);
             saveBtn.Name = "saveBtn";
-            saveBtn.Size = new Size(158, 33);
+            saveBtn.Size = new Size(153, 33);
             saveBtn.TabIndex = 88;
             saveBtn.Text = "Save Changes";
             saveBtn.UseVisualStyleBackColor = true;
@@ -150,7 +153,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(146, 138);
+            label2.Location = new Point(395, 158);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
             label2.TabIndex = 89;
@@ -159,7 +162,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(146, 198);
+            label3.Location = new Point(395, 218);
             label3.Name = "label3";
             label3.Size = new Size(100, 15);
             label3.TabIndex = 90;
@@ -168,7 +171,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(146, 251);
+            label4.Location = new Point(395, 271);
             label4.Name = "label4";
             label4.Size = new Size(84, 15);
             label4.TabIndex = 91;
@@ -177,7 +180,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(146, 304);
+            label5.Location = new Point(395, 324);
             label5.Name = "label5";
             label5.Size = new Size(131, 15);
             label5.TabIndex = 92;
@@ -186,7 +189,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(487, 206);
+            radioButton1.Location = new Point(596, 215);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(171, 19);
             radioButton1.TabIndex = 93;
@@ -198,7 +201,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(487, 231);
+            radioButton2.Location = new Point(596, 240);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(151, 19);
             radioButton2.TabIndex = 94;
@@ -210,7 +213,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(487, 256);
+            radioButton3.Location = new Point(596, 265);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(173, 19);
             radioButton3.TabIndex = 95;
@@ -222,15 +225,16 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(487, 286);
+            label6.Location = new Point(596, 295);
             label6.Name = "label6";
             label6.Size = new Size(49, 15);
             label6.TabIndex = 96;
             label6.Text = "Answer:";
+            label6.Click += label6_Click;
             // 
             // submitbtn
             // 
-            submitbtn.Location = new Point(535, 362);
+            submitbtn.Location = new Point(631, 360);
             submitbtn.Name = "submitbtn";
             submitbtn.Size = new Size(116, 31);
             submitbtn.TabIndex = 97;
@@ -241,17 +245,17 @@
             // answertxt
             // 
             answertxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            answertxt.Location = new Point(487, 313);
+            answertxt.Location = new Point(596, 322);
             answertxt.Multiline = true;
             answertxt.Name = "answertxt";
-            answertxt.Size = new Size(213, 32);
+            answertxt.Size = new Size(173, 32);
             answertxt.TabIndex = 98;
             answertxt.TextChanged += answertxt_TextChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(453, 143);
+            label7.Location = new Point(594, 152);
             label7.Name = "label7";
             label7.Size = new Size(60, 15);
             label7.TabIndex = 100;
@@ -260,11 +264,32 @@
             // usernameTxt2
             // 
             usernameTxt2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTxt2.Location = new Point(475, 161);
+            usernameTxt2.Location = new Point(596, 170);
             usernameTxt2.Multiline = true;
             usernameTxt2.Name = "usernameTxt2";
-            usernameTxt2.Size = new Size(213, 32);
+            usernameTxt2.Size = new Size(170, 32);
             usernameTxt2.TabIndex = 99;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(154, 118);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 25);
+            label8.TabIndex = 101;
+            label8.Text = "Users Lists";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.Window;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(23, 160);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(356, 150);
+            dataGridView1.TabIndex = 102;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Users
             // 
@@ -272,6 +297,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(usernameTxt2);
             Controls.Add(answertxt);
@@ -300,6 +327,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Users";
             Load += Users_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -327,5 +355,7 @@
         private TextBox answertxt;
         private Label label7;
         private TextBox usernameTxt2;
+        private Label label8;
+        public DataGridView dataGridView1;
     }
 }

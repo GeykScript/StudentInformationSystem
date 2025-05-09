@@ -33,7 +33,6 @@
             usersbtn = new Button();
             enrollmentsBtn = new Button();
             paymentsBtn = new Button();
-            logsBtn = new Button();
             titleName = new Label();
             logoutbtn = new Button();
             courseBtn = new Button();
@@ -57,6 +56,7 @@
             paymentBtn = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
+            gradesBtn = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -66,10 +66,10 @@
             // panel1
             // 
             panel1.BackColor = Color.LightSkyBlue;
+            panel1.Controls.Add(gradesBtn);
             panel1.Controls.Add(usersbtn);
             panel1.Controls.Add(enrollmentsBtn);
             panel1.Controls.Add(paymentsBtn);
-            panel1.Controls.Add(logsBtn);
             panel1.Controls.Add(titleName);
             panel1.Controls.Add(logoutbtn);
             panel1.Controls.Add(courseBtn);
@@ -94,7 +94,7 @@
             // 
             // enrollmentsBtn
             // 
-            enrollmentsBtn.Location = new Point(37, 309);
+            enrollmentsBtn.Location = new Point(38, 350);
             enrollmentsBtn.Name = "enrollmentsBtn";
             enrollmentsBtn.Size = new Size(124, 37);
             enrollmentsBtn.TabIndex = 9;
@@ -103,23 +103,13 @@
             // 
             // paymentsBtn
             // 
-            paymentsBtn.Location = new Point(37, 266);
+            paymentsBtn.Location = new Point(38, 307);
             paymentsBtn.Name = "paymentsBtn";
             paymentsBtn.Size = new Size(124, 37);
             paymentsBtn.TabIndex = 8;
             paymentsBtn.Text = "Payments";
             paymentsBtn.UseVisualStyleBackColor = true;
             paymentsBtn.Click += paymentsBtn_Click;
-            // 
-            // logsBtn
-            // 
-            logsBtn.Location = new Point(37, 350);
-            logsBtn.Name = "logsBtn";
-            logsBtn.Size = new Size(124, 37);
-            logsBtn.TabIndex = 7;
-            logsBtn.Text = "Logs";
-            logsBtn.UseVisualStyleBackColor = true;
-            logsBtn.Click += logsBtn_Click;
             // 
             // titleName
             // 
@@ -149,7 +139,7 @@
             // 
             // courseBtn
             // 
-            courseBtn.Location = new Point(37, 223);
+            courseBtn.Location = new Point(38, 265);
             courseBtn.Name = "courseBtn";
             courseBtn.Size = new Size(124, 37);
             courseBtn.TabIndex = 3;
@@ -376,6 +366,16 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // gradesBtn
+            // 
+            gradesBtn.Location = new Point(38, 223);
+            gradesBtn.Name = "gradesBtn";
+            gradesBtn.Size = new Size(124, 37);
+            gradesBtn.TabIndex = 11;
+            gradesBtn.Text = "Grades";
+            gradesBtn.UseVisualStyleBackColor = true;
+            gradesBtn.Click += gradesBtn_Click;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -420,7 +420,6 @@
         private Label label6;
         private Label label9;
         private Label label10;
-        private Button logsBtn;
         private FileSystemWatcher fileSystemWatcher1;
         private Button refreshbtn;
         private System.Windows.Forms.Timer timer1;
@@ -428,5 +427,6 @@
         private Button paymentsBtn;
         private Button enrollmentsBtn;
         private Button usersbtn;
+        private Button gradesBtn;
     }
 }

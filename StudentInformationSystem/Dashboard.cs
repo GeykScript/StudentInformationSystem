@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 
 namespace StudentInformationSystem
@@ -156,10 +157,7 @@ d.department_name AS DEPARTMENT
             loadform(courses);
         }
 
-        private void logsBtn_Click(object sender, EventArgs e)
-        {
-            loadform(new Logs());
-        }
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -297,7 +295,61 @@ join students s on sp.student_id = s.student_id";
 
         private void usersbtn_Click(object sender, EventArgs e)
         {
-            loadform(new Users());
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+                SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Users userForm = new Users();
+                    userForm.dataGridView1.DataSource = dt;
+
+
+                    // Show the form or load it in a panel/container
+                    loadform(userForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+        }
+
+        private void gradesBtn_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+                SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, Average_Grade AS 'Average Grade' from students_average";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Grades gradesForm = new Grades();
+                    gradesForm.dataGridView1.DataSource = dt;
+
+
+                    // Show the form or load it in a panel/container
+                    loadform(gradesForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }
