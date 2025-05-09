@@ -75,7 +75,17 @@ d.department_name AS DEPARTMENT
         ORDER BY
         ID;
         ";
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
 
+            string query3 = @"
+    SELECT course_id AS ID, 
+           course_name AS Course 
+    FROM courses
+    ORDER BY ID";
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 try
@@ -89,6 +99,24 @@ d.department_name AS DEPARTMENT
                     Students studentsForm = new Students();
                     studentsForm.dataGridView1.DataSource = dt;
                     studentsForm.dateTimeTextBox3.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    studentsForm.comboBox1.DataSource = studentTable;
+                    studentsForm.comboBox1.DisplayMember = "Fullname";
+                    studentsForm.comboBox1.ValueMember = "ID";
+
+                    MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query3, conn);
+                    DataTable studentTable2 = new DataTable();
+                    comboAdapter2.Fill(studentTable2);
+
+                    studentsForm.comboBox2.DataSource = studentTable2;
+                    studentsForm.comboBox2.DisplayMember = "Course";
+                    studentsForm.comboBox2.ValueMember = "ID";
+
 
                     // Show the form or load it in a panel/container
                     loadform(studentsForm);
@@ -329,7 +357,15 @@ join students s on sp.student_id = s.student_id";
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
             //uses function to get the full name of the student
             string query = @"
-                SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, Average_Grade AS 'Average Grade' from students_average";
+                SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, 
+Average_Grade AS 'Average Grade' from students_average";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 try
@@ -342,6 +378,15 @@ join students s on sp.student_id = s.student_id";
                     // Instantiate the Students form
                     Grades gradesForm = new Grades();
                     gradesForm.dataGridView1.DataSource = dt;
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    gradesForm.comboBox1.DataSource = studentTable;
+                    gradesForm.comboBox1.DisplayMember = "Fullname";
+                    gradesForm.comboBox1.ValueMember = "ID";
 
 
                     // Show the form or load it in a panel/container
@@ -357,27 +402,47 @@ join students s on sp.student_id = s.student_id";
         private void enrollmentsBtn_Click(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
-            //uses function to get the full name of the student
             string query = @"
-              SELECT  e.enrollment_id as ID,
-	setStudentFullname(s.first_name,s.last_name) as Fullname,
-    e.year_lvl AS 'Year Level',
-e.first_sem_fee as '1st Sem Fee',e.second_sem_fee as '2nd Sem Fee',e.other_fee as 'Miscellaneous'
-from enrollment_fees e
-join students s on e.student_id =  s.student_id;";
+    SELECT e.enrollment_id AS ID,
+           setStudentFullname(s.first_name, s.last_name) AS Fullname,
+           e.year_lvl AS 'Year Level',
+           e.first_sem_fee AS '1st Sem Fee',
+           e.second_sem_fee AS '2nd Sem Fee',
+           e.other_fee AS 'Miscellaneous'
+    FROM enrollment_fees e
+    JOIN students s ON e.student_id = s.student_id
+    ORDER BY Fullname, 'Year Level'";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
+
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 try
                 {
                     conn.Open();
+
+                    // Load enrollment data
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    // Instantiate the Students form
+                    // Instantiate the Enrollments form
                     Enrollments enrollmentsForm = new Enrollments();
                     enrollmentsForm.dataGridView1.DataSource = dt;
 
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    enrollmentsForm.comboBox1.DataSource = studentTable;
+                    enrollmentsForm.comboBox1.DisplayMember = "Fullname";
+                    enrollmentsForm.comboBox1.ValueMember = "ID";
 
                     // Show the form or load it in a panel/container
                     loadform(enrollmentsForm);
@@ -388,5 +453,6 @@ join students s on e.student_id =  s.student_id;";
                 }
             }
         }
+
     }
 }

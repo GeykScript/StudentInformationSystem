@@ -90,5 +90,10 @@ d.department_name AS DEPARTMENT
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
