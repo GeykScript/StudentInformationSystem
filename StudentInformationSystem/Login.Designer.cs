@@ -47,9 +47,9 @@
             titleName.BackColor = Color.LightSkyBlue;
             titleName.Font = new Font("Sitka Banner", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titleName.ForeColor = SystemColors.ButtonHighlight;
-            titleName.Location = new Point(63, 19);
+            titleName.Location = new Point(72, 25);
             titleName.Name = "titleName";
-            titleName.Size = new Size(313, 139);
+            titleName.Size = new Size(390, 174);
             titleName.TabIndex = 0;
             titleName.Text = "iSTUD";
             titleName.TextAlign = ContentAlignment.TopCenter;
@@ -57,57 +57,60 @@
             // username
             // 
             username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            username.Location = new Point(95, 173);
+            username.Location = new Point(109, 231);
+            username.Margin = new Padding(3, 4, 3, 4);
             username.Multiline = true;
             username.Name = "username";
-            username.Size = new Size(213, 32);
+            username.Size = new Size(243, 41);
             username.TabIndex = 2;
             // 
             // passwordTxt
             // 
             passwordTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordTxt.Location = new Point(95, 231);
+            passwordTxt.Location = new Point(109, 308);
+            passwordTxt.Margin = new Padding(3, 4, 3, 4);
             passwordTxt.Multiline = true;
             passwordTxt.Name = "passwordTxt";
             passwordTxt.PasswordChar = '*';
-            passwordTxt.Size = new Size(213, 31);
+            passwordTxt.Size = new Size(243, 40);
             passwordTxt.TabIndex = 3;
             passwordTxt.TextChanged += passwordTxt_TextChanged;
             // 
             // usernameTxt
             // 
             usernameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTxt.Location = new Point(92, 173);
+            usernameTxt.Location = new Point(105, 231);
+            usernameTxt.Margin = new Padding(3, 4, 3, 4);
             usernameTxt.Multiline = true;
             usernameTxt.Name = "usernameTxt";
-            usernameTxt.Size = new Size(213, 32);
+            usernameTxt.Size = new Size(243, 41);
             usernameTxt.TabIndex = 2;
             usernameTxt.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(95, 155);
+            label1.Location = new Point(109, 207);
             label1.Name = "label1";
-            label1.Size = new Size(63, 15);
+            label1.Size = new Size(78, 20);
             label1.TabIndex = 4;
             label1.Text = "Username:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(92, 155);
+            label3.Location = new Point(105, 207);
             label3.Name = "label3";
-            label3.Size = new Size(63, 15);
+            label3.Size = new Size(78, 20);
             label3.TabIndex = 4;
             label3.Text = "Username:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(95, 213);
+            label2.Location = new Point(109, 284);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(73, 20);
             label2.TabIndex = 5;
             label2.Text = "Password:";
             // 
@@ -115,9 +118,10 @@
             // 
             loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = SystemColors.ControlDarkDark;
-            loginBtn.Location = new Point(140, 320);
+            loginBtn.Location = new Point(160, 427);
+            loginBtn.Margin = new Padding(3, 4, 3, 4);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(129, 34);
+            loginBtn.Size = new Size(147, 45);
             loginBtn.TabIndex = 6;
             loginBtn.Text = "Login";
             loginBtn.UseVisualStyleBackColor = true;
@@ -135,9 +139,11 @@
             groupLogin.Controls.Add(passwordTxt);
             groupLogin.Controls.Add(username);
             groupLogin.Controls.Add(titleName);
-            groupLogin.Location = new Point(325, 37);
+            groupLogin.Location = new Point(371, 49);
+            groupLogin.Margin = new Padding(3, 4, 3, 4);
             groupLogin.Name = "groupLogin";
-            groupLogin.Size = new Size(400, 378);
+            groupLogin.Padding = new Padding(3, 4, 3, 4);
+            groupLogin.Size = new Size(457, 504);
             groupLogin.TabIndex = 0;
             groupLogin.TabStop = false;
             groupLogin.Enter += groupLogin_Enter;
@@ -153,9 +159,10 @@
             forgotbtn.FlatStyle = FlatStyle.Flat;
             forgotbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             forgotbtn.ForeColor = Color.SteelBlue;
-            forgotbtn.Location = new Point(186, 264);
+            forgotbtn.Location = new Point(179, 356);
+            forgotbtn.Margin = new Padding(3, 4, 3, 4);
             forgotbtn.Name = "forgotbtn";
-            forgotbtn.Size = new Size(136, 34);
+            forgotbtn.Size = new Size(203, 45);
             forgotbtn.TabIndex = 7;
             forgotbtn.Text = "Forgot Password?";
             forgotbtn.UseVisualStyleBackColor = false;
@@ -163,11 +170,12 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1012, 461);
+            ClientSize = new Size(1157, 615);
             Controls.Add(groupLogin);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Login";

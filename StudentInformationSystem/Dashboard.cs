@@ -157,7 +157,7 @@ d.department_name AS DEPARTMENT
             loadform(courses);
         }
 
-        
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -296,6 +296,7 @@ join students s on sp.student_id = s.student_id";
         private void usersbtn_Click(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            //uses function to  get full name of the user
             string query = @"
                 SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -326,6 +327,7 @@ join students s on sp.student_id = s.student_id";
         private void gradesBtn_Click(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            //uses function to get the full name of the student
             string query = @"
                 SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, Average_Grade AS 'Average Grade' from students_average";
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -344,6 +346,41 @@ join students s on sp.student_id = s.student_id";
 
                     // Show the form or load it in a panel/container
                     loadform(gradesForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void enrollmentsBtn_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            //uses function to get the full name of the student
+            string query = @"
+              SELECT  e.enrollment_id as ID,
+	setStudentFullname(s.first_name,s.last_name) as Fullname,
+    e.year_lvl AS 'Year Level',
+e.first_sem_fee as '1st Sem Fee',e.second_sem_fee as '2nd Sem Fee',e.other_fee as 'Miscellaneous'
+from enrollment_fees e
+join students s on e.student_id =  s.student_id;";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Enrollments enrollmentsForm = new Enrollments();
+                    enrollmentsForm.dataGridView1.DataSource = dt;
+
+
+                    // Show the form or load it in a panel/container
+                    loadform(enrollmentsForm);
                 }
                 catch (Exception ex)
                 {

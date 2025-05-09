@@ -85,5 +85,10 @@ d.department_name AS DEPARTMENT
                 }
             }
         }
+
+        private void Students_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
