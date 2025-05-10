@@ -69,10 +69,10 @@
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(261, 215);
+            dataGridView1.Location = new Point(262, 218);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(366, 177);
+            dataGridView1.Size = new Size(373, 164);
             dataGridView1.TabIndex = 35;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -88,17 +88,17 @@
             // 
             // button1
             // 
-            button1.Location = new Point(475, 188);
+            button1.Location = new Point(448, 189);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(151, 22);
+            button1.Size = new Size(131, 22);
             button1.TabIndex = 87;
             button1.Text = "View Student Grades";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(643, 188);
+            button2.Location = new Point(585, 188);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(82, 22);
@@ -109,7 +109,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(286, 186);
+            comboBox1.Location = new Point(262, 189);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(171, 23);
             comboBox1.TabIndex = 105;

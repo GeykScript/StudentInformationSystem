@@ -61,7 +61,7 @@ s.student_id AS ID,
 s.last_name AS `Last Name`, 
 s.first_name AS `First Name`, 
 c.course_name AS Course,
-sy.year_level AS `Year Level`,
+s.year_level AS `Year Level`,
 d.department_name AS DEPARTMENT
 
         FROM 
@@ -70,8 +70,7 @@ d.department_name AS DEPARTMENT
             courses c ON s.course_id = c.course_id
         JOIN 
             departments d ON c.department_id = d.department_id
-        JOIN 
-            student_yearlevels sy ON s.student_id = sy.student_id
+      
         ORDER BY
         ID;
         ";
@@ -325,20 +324,20 @@ join students s on sp.student_id = s.student_id";
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
             //uses function to  get full name of the user
-            string query = @"
-                SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
+            //string query = @"
+            //    SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 try
                 {
-                    conn.Open();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                   // conn.Open();
+                  //  MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                   // DataTable dt = new DataTable();
+                   // adapter.Fill(dt);
 
                     // Instantiate the Students form
                     Users userForm = new Users();
-                    userForm.dataGridView1.DataSource = dt;
+                   // userForm.dataGridView1.DataSource = dt;
 
 
                     // Show the form or load it in a panel/container

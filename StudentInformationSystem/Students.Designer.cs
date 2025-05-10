@@ -33,19 +33,21 @@
             label9 = new Label();
             addstudent = new Button();
             editstudent = new Button();
-            btnPanel = new Panel();
             dateTimeTextBox3 = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
             refreshbtn = new Button();
             dataGridView1 = new DataGridView();
             label8 = new Label();
             comboBox1 = new ComboBox();
-            usernameTxt2 = new TextBox();
+            yeartxt = new TextBox();
             comboBox2 = new ComboBox();
             label7 = new Label();
             label1 = new Label();
             label2 = new Label();
-            btnPanel.SuspendLayout();
+            firstnametxt = new TextBox();
+            lastnametxt = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -78,9 +80,9 @@
             // addstudent
             // 
             addstudent.BackColor = Color.LightSkyBlue;
-            addstudent.Location = new Point(3, 3);
+            addstudent.Location = new Point(622, 189);
             addstudent.Name = "addstudent";
-            addstudent.Size = new Size(116, 41);
+            addstudent.Size = new Size(116, 33);
             addstudent.TabIndex = 53;
             addstudent.Text = "Add Student";
             addstudent.UseVisualStyleBackColor = false;
@@ -88,24 +90,14 @@
             // 
             // editstudent
             // 
-            editstudent.BackColor = Color.LightYellow;
-            editstudent.Location = new Point(125, 3);
+            editstudent.BackColor = Color.Moccasin;
+            editstudent.Location = new Point(622, 228);
             editstudent.Name = "editstudent";
-            editstudent.Size = new Size(86, 41);
+            editstudent.Size = new Size(116, 33);
             editstudent.TabIndex = 55;
-            editstudent.Text = "Edit ";
+            editstudent.Text = "Edit Student";
             editstudent.UseVisualStyleBackColor = false;
             editstudent.Click += editstudent_Click;
-            // 
-            // btnPanel
-            // 
-            btnPanel.Controls.Add(addstudent);
-            btnPanel.Controls.Add(editstudent);
-            btnPanel.Location = new Point(559, 174);
-            btnPanel.Name = "btnPanel";
-            btnPanel.Size = new Size(214, 47);
-            btnPanel.TabIndex = 56;
-            btnPanel.Paint += btnPanel_Paint;
             // 
             // dateTimeTextBox3
             // 
@@ -127,7 +119,7 @@
             // 
             // refreshbtn
             // 
-            refreshbtn.Location = new Point(53, 222);
+            refreshbtn.Location = new Point(33, 259);
             refreshbtn.Name = "refreshbtn";
             refreshbtn.Size = new Size(75, 23);
             refreshbtn.TabIndex = 58;
@@ -141,10 +133,10 @@
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.ControlDark;
-            dataGridView1.Location = new Point(53, 251);
+            dataGridView1.Location = new Point(33, 288);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(657, 150);
+            dataGridView1.Size = new Size(705, 150);
             dataGridView1.TabIndex = 59;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -161,24 +153,24 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(53, 184);
+            comboBox1.Location = new Point(312, 238);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(171, 23);
             comboBox1.TabIndex = 104;
             // 
-            // usernameTxt2
+            // yeartxt
             // 
-            usernameTxt2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTxt2.Location = new Point(481, 182);
-            usernameTxt2.Multiline = true;
-            usernameTxt2.Name = "usernameTxt2";
-            usernameTxt2.Size = new Size(50, 28);
-            usernameTxt2.TabIndex = 107;
+            yeartxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            yeartxt.Location = new Point(548, 204);
+            yeartxt.Multiline = true;
+            yeartxt.Name = "yeartxt";
+            yeartxt.Size = new Size(50, 28);
+            yeartxt.TabIndex = 107;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(245, 184);
+            comboBox2.Location = new Point(312, 209);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(221, 23);
             comboBox2.TabIndex = 108;
@@ -186,7 +178,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(53, 166);
+            label7.Location = new Point(212, 241);
             label7.Name = "label7";
             label7.Size = new Size(83, 15);
             label7.TabIndex = 109;
@@ -195,7 +187,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(245, 166);
+            label1.Location = new Point(312, 191);
             label1.Name = "label1";
             label1.Size = new Size(95, 15);
             label1.TabIndex = 110;
@@ -204,11 +196,48 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(481, 164);
+            label2.Location = new Point(548, 189);
             label2.Name = "label2";
             label2.Size = new Size(50, 15);
             label2.TabIndex = 111;
             label2.Text = "Yr. Level";
+            // 
+            // firstnametxt
+            // 
+            firstnametxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            firstnametxt.Location = new Point(30, 209);
+            firstnametxt.Multiline = true;
+            firstnametxt.Name = "firstnametxt";
+            firstnametxt.Size = new Size(133, 23);
+            firstnametxt.TabIndex = 112;
+            firstnametxt.TextChanged += textBox1_TextChanged;
+            // 
+            // lastnametxt
+            // 
+            lastnametxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lastnametxt.Location = new Point(169, 209);
+            lastnametxt.Multiline = true;
+            lastnametxt.Name = "lastnametxt";
+            lastnametxt.Size = new Size(126, 23);
+            lastnametxt.TabIndex = 113;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(33, 189);
+            label3.Name = "label3";
+            label3.Size = new Size(64, 15);
+            label3.TabIndex = 114;
+            label3.Text = "First Name";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(169, 189);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 15);
+            label4.TabIndex = 115;
+            label4.Text = "Last Name";
             // 
             // Students
             // 
@@ -216,24 +245,28 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(lastnametxt);
+            Controls.Add(firstnametxt);
+            Controls.Add(addstudent);
             Controls.Add(label2);
+            Controls.Add(editstudent);
             Controls.Add(label1);
             Controls.Add(label7);
             Controls.Add(comboBox2);
-            Controls.Add(usernameTxt2);
+            Controls.Add(yeartxt);
             Controls.Add(comboBox1);
             Controls.Add(label8);
             Controls.Add(dataGridView1);
             Controls.Add(refreshbtn);
             Controls.Add(dateTimeTextBox3);
-            Controls.Add(btnPanel);
             Controls.Add(label10);
             Controls.Add(label9);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Students";
             Text = "Students";
             Load += Students_Load;
-            btnPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -245,7 +278,6 @@
         private Label label9;
         private Button addstudent;
         private Button editstudent;
-        private Panel btnPanel;
         public TextBox dateTimeTextBox;
         private System.Windows.Forms.Timer timer1;
         public TextBox dateTimeTextBox3;
@@ -253,10 +285,14 @@
         public DataGridView dataGridView1;
         private Label label8;
         public ComboBox comboBox1;
-        private TextBox usernameTxt2;
+        private TextBox yeartxt;
         public ComboBox comboBox2;
         private Label label7;
         private Label label1;
         private Label label2;
+        private TextBox firstnametxt;
+        private TextBox lastnametxt;
+        private Label label3;
+        private Label label4;
     }
 }
