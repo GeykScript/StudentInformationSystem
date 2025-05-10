@@ -324,8 +324,8 @@ join students s on sp.student_id = s.student_id";
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
             //uses function to  get full name of the user
-            //string query = @"
-            //    SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
+            string query = @"
+                SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 try
@@ -337,8 +337,15 @@ join students s on sp.student_id = s.student_id";
 
                     // Instantiate the Students form
                     Users userForm = new Users();
-                   // userForm.dataGridView1.DataSource = dt;
+                    // userForm.dataGridView1.DataSource = dt;
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
 
+                    userForm.comboBox1.DataSource = studentTable;
+                    userForm.comboBox1.DisplayMember = "Username";
+                    userForm.comboBox1.ValueMember = "ID";
 
                     // Show the form or load it in a panel/container
                     loadform(userForm);
@@ -365,6 +372,10 @@ Average_Grade AS 'Average Grade' from students_average";
     FROM students
     ORDER BY Fullname";
 
+            string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
+            string query4 = @"SELECT course_id AS ID, course_name AS Course FROM courses";
+
+
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 try
@@ -386,6 +397,14 @@ Average_Grade AS 'Average Grade' from students_average";
                     gradesForm.comboBox1.DataSource = studentTable;
                     gradesForm.comboBox1.DisplayMember = "Fullname";
                     gradesForm.comboBox1.ValueMember = "ID";
+
+                    MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query4, conn);
+                    DataTable coursesTable = new DataTable();
+                    comboAdapter2.Fill(coursesTable);
+
+                    gradesForm.comboBox2.DataSource = coursesTable;
+                    gradesForm.comboBox2.DisplayMember = "Course";
+                    gradesForm.comboBox2.ValueMember = "ID";
 
 
                     // Show the form or load it in a panel/container

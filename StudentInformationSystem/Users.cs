@@ -142,18 +142,30 @@ namespace StudentInformationSystem
             else
                 return "";
         }
+        private int GetSelectedUser()
+        {
+            var selectedItem = comboBox1.SelectedItem;
+            if (selectedItem != null)
+            {
+                // Get the selected student's ID using the ValueMember of the ComboBox
+                return (int)((DataRowView)selectedItem)["ID"];
+            }
+            return -1; // Return -1 if no selection is made
+        }
+
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
-            string username = usernameTxt2.Text.Trim();
+           // string username = usernameTxt2.Text.Trim();
+            int username = GetSelectedUser(); // Retrieve the selected user ID from combo box
             string question = GetSelectedQuestion();
             string answer = answertxt.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(question) || string.IsNullOrEmpty(answer))
+            if ( username==0 || string.IsNullOrEmpty(question) || string.IsNullOrEmpty(answer))
             {
                 MessageBox.Show("Please fill in all fields and select a question.");
-                usernameTxt2.Clear();
+                
                 answertxt.Clear();
                 return;
             }
@@ -164,7 +176,7 @@ namespace StudentInformationSystem
                 {
                     conn.Open();
 
-                    string query = "UPDATE users SET security_question = @question, answer = @answer WHERE username = @username";
+                    string query = "UPDATE users SET security_question = @question, answer = @answer WHERE id = @username";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@question", question);
@@ -176,7 +188,7 @@ namespace StudentInformationSystem
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Security question and answer saved successfully.");
-                            usernameTxt2.Clear();
+                           
                             answertxt.Clear();
                             radioButton1.Checked = false;
                             radioButton2.Checked = false;
@@ -220,6 +232,57 @@ namespace StudentInformationSystem
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string firstname = firstnametxt.Text.Trim();
+            string lastname = lastnametxt.Text.Trim();
+            string username = usertxt.Text.Trim();
+            string password = passwordtxt.Text.Trim();
+            string confirmpassword = confirmtxt.Text.Trim();
+
+            if (password != confirmpassword)
+            {
+                MessageBox.Show("Password and confirmation do not match.");
+                passwordtxt.Clear();
+                confirmtxt.Clear();
+                return;
+            }
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO users (fname, lastname, username, password, security_question, answer) " +
+                                   "VALUES (@firstname, @lastname, @username, @password, NULL, NULL);";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@firstname", firstname);
+                        cmd.Parameters.AddWithValue("@lastname", lastname);
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("User added successfully.");
+                            firstnametxt.Clear();
+                            lastnametxt.Clear();
+                            usertxt.Clear();
+                            passwordtxt.Clear();
+                            confirmtxt.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to add user.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
     }
 }

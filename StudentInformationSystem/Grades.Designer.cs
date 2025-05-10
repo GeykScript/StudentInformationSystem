@@ -35,6 +35,13 @@
             button1 = new Button();
             button2 = new Button();
             comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
+            gradetxt = new TextBox();
+            label7 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -44,9 +51,9 @@
             label10.BackColor = Color.LightSkyBlue;
             label10.Font = new Font("Sitka Banner", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(299, 36);
+            label10.Location = new Point(262, 27);
             label10.Name = "label10";
-            label10.Size = new Size(530, 43);
+            label10.Size = new Size(426, 35);
             label10.TabIndex = 34;
             label10.Text = "Student Information Management System";
             label10.TextAlign = ContentAlignment.TopCenter;
@@ -57,9 +64,9 @@
             label9.BackColor = Color.LightSkyBlue;
             label9.Font = new Font("Sitka Banner", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(97, 11);
+            label9.Location = new Point(85, 8);
             label9.Name = "label9";
-            label9.Size = new Size(196, 87);
+            label9.Size = new Size(157, 69);
             label9.TabIndex = 33;
             label9.Text = "iSTUD";
             label9.TextAlign = ContentAlignment.TopCenter;
@@ -69,11 +76,10 @@
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(299, 291);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(213, 271);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(464, 180);
+            dataGridView1.Size = new Size(406, 135);
             dataGridView1.TabIndex = 35;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -81,45 +87,117 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(376, 191);
+            label15.Location = new Point(313, 114);
             label15.Name = "label15";
-            label15.Size = new Size(278, 32);
+            label15.Size = new Size(218, 25);
             label15.TabIndex = 86;
             label15.Text = "Students Average Grade";
             // 
             // button1
             // 
-            button1.Location = new Point(512, 252);
+            button1.Location = new Point(423, 160);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(150, 29);
+            button1.Size = new Size(131, 22);
             button1.TabIndex = 87;
             button1.Text = "View Student Grades";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(669, 251);
+            button2.Location = new Point(537, 231);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(82, 35);
             button2.TabIndex = 88;
             button2.Text = "Add Grade";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(299, 252);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Location = new Point(213, 161);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(195, 28);
+            comboBox1.Size = new Size(204, 23);
             comboBox1.TabIndex = 105;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(213, 203);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(204, 23);
+            comboBox2.TabIndex = 106;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(423, 203);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(196, 23);
+            comboBox3.TabIndex = 107;
+            // 
+            // gradetxt
+            // 
+            gradetxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gradetxt.Location = new Point(474, 231);
+            gradetxt.Multiline = true;
+            gradetxt.Name = "gradetxt";
+            gradetxt.Size = new Size(57, 34);
+            gradetxt.TabIndex = 108;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(213, 143);
+            label7.Name = "label7";
+            label7.Size = new Size(83, 15);
+            label7.TabIndex = 109;
+            label7.Text = "Student Name";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(213, 185);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 15);
+            label1.TabIndex = 110;
+            label1.Text = "Course";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(423, 185);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 111;
+            label2.Text = "Subjects";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(427, 241);
+            label3.Name = "label3";
+            label3.Size = new Size(41, 15);
+            label3.TabIndex = 112;
+            label3.Text = "Grade:";
             // 
             // Grades
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(label7);
+            Controls.Add(gradetxt);
+            Controls.Add(comboBox3);
+            Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -128,7 +206,6 @@
             Controls.Add(label10);
             Controls.Add(label9);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Grades";
@@ -147,5 +224,12 @@
         private Button button1;
         private Button button2;
         public ComboBox comboBox1;
+        public ComboBox comboBox2;
+        public ComboBox comboBox3;
+        private TextBox gradetxt;
+        private Label label7;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
