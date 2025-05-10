@@ -57,9 +57,9 @@
             label10.BackColor = Color.LightSkyBlue;
             label10.Font = new Font("Sitka Banner", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(193, 48);
+            label10.Location = new Point(221, 64);
             label10.Name = "label10";
-            label10.Size = new Size(426, 35);
+            label10.Size = new Size(530, 43);
             label10.TabIndex = 51;
             label10.Text = "Student Information Management System";
             label10.TextAlign = ContentAlignment.TopCenter;
@@ -70,9 +70,9 @@
             label9.BackColor = Color.LightSkyBlue;
             label9.Font = new Font("Sitka Banner", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(30, 33);
+            label9.Location = new Point(34, 44);
             label9.Name = "label9";
-            label9.Size = new Size(157, 69);
+            label9.Size = new Size(196, 87);
             label9.TabIndex = 43;
             label9.Text = "iSTUD";
             label9.TextAlign = ContentAlignment.TopCenter;
@@ -80,9 +80,10 @@
             // addstudent
             // 
             addstudent.BackColor = Color.LightSkyBlue;
-            addstudent.Location = new Point(622, 189);
+            addstudent.Location = new Point(711, 252);
+            addstudent.Margin = new Padding(3, 4, 3, 4);
             addstudent.Name = "addstudent";
-            addstudent.Size = new Size(116, 33);
+            addstudent.Size = new Size(133, 44);
             addstudent.TabIndex = 53;
             addstudent.Text = "Add Student";
             addstudent.UseVisualStyleBackColor = false;
@@ -91,9 +92,10 @@
             // editstudent
             // 
             editstudent.BackColor = Color.Moccasin;
-            editstudent.Location = new Point(622, 228);
+            editstudent.Location = new Point(711, 304);
+            editstudent.Margin = new Padding(3, 4, 3, 4);
             editstudent.Name = "editstudent";
-            editstudent.Size = new Size(116, 33);
+            editstudent.Size = new Size(133, 44);
             editstudent.TabIndex = 55;
             editstudent.Text = "Edit Student";
             editstudent.UseVisualStyleBackColor = false;
@@ -104,10 +106,11 @@
             dateTimeTextBox3.BackColor = SystemColors.ButtonHighlight;
             dateTimeTextBox3.BorderStyle = BorderStyle.None;
             dateTimeTextBox3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimeTextBox3.Location = new Point(414, 86);
+            dateTimeTextBox3.Location = new Point(473, 115);
+            dateTimeTextBox3.Margin = new Padding(3, 4, 3, 4);
             dateTimeTextBox3.Name = "dateTimeTextBox3";
             dateTimeTextBox3.ReadOnly = true;
-            dateTimeTextBox3.Size = new Size(324, 28);
+            dateTimeTextBox3.Size = new Size(370, 35);
             dateTimeTextBox3.TabIndex = 57;
             dateTimeTextBox3.TextChanged += dateTimeTextBox_TextChanged;
             // 
@@ -119,9 +122,10 @@
             // 
             // refreshbtn
             // 
-            refreshbtn.Location = new Point(33, 259);
+            refreshbtn.Location = new Point(38, 345);
+            refreshbtn.Margin = new Padding(3, 4, 3, 4);
             refreshbtn.Name = "refreshbtn";
-            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.Size = new Size(86, 31);
             refreshbtn.TabIndex = 58;
             refreshbtn.Text = "Refresh";
             refreshbtn.UseVisualStyleBackColor = true;
@@ -133,10 +137,11 @@
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.ControlDark;
-            dataGridView1.Location = new Point(33, 288);
+            dataGridView1.Location = new Point(34, 384);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(705, 150);
+            dataGridView1.Size = new Size(843, 176);
             dataGridView1.TabIndex = 59;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -144,107 +149,112 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(312, 128);
+            label8.Location = new Point(357, 171);
             label8.Name = "label8";
-            label8.Size = new Size(194, 25);
+            label8.Size = new Size(245, 32);
             label8.TabIndex = 103;
             label8.Text = "Students Information";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(312, 238);
+            comboBox1.Location = new Point(357, 317);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(171, 23);
+            comboBox1.Size = new Size(195, 28);
             comboBox1.TabIndex = 104;
             // 
             // yeartxt
             // 
             yeartxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            yeartxt.Location = new Point(548, 204);
+            yeartxt.Location = new Point(626, 272);
+            yeartxt.Margin = new Padding(3, 4, 3, 4);
             yeartxt.Multiline = true;
             yeartxt.Name = "yeartxt";
-            yeartxt.Size = new Size(50, 28);
+            yeartxt.Size = new Size(57, 36);
             yeartxt.TabIndex = 107;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(312, 209);
+            comboBox2.Location = new Point(357, 279);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(221, 23);
+            comboBox2.Size = new Size(252, 28);
             comboBox2.TabIndex = 108;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(212, 241);
+            label7.Location = new Point(242, 321);
             label7.Name = "label7";
-            label7.Size = new Size(83, 15);
+            label7.Size = new Size(104, 20);
             label7.TabIndex = 109;
             label7.Text = "Student Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(312, 191);
+            label1.Location = new Point(357, 255);
             label1.Name = "label1";
-            label1.Size = new Size(95, 15);
+            label1.Size = new Size(120, 20);
             label1.TabIndex = 110;
             label1.Text = "Course Available";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(548, 189);
+            label2.Location = new Point(626, 252);
             label2.Name = "label2";
-            label2.Size = new Size(50, 15);
+            label2.Size = new Size(62, 20);
             label2.TabIndex = 111;
             label2.Text = "Yr. Level";
             // 
             // firstnametxt
             // 
             firstnametxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            firstnametxt.Location = new Point(30, 209);
+            firstnametxt.Location = new Point(34, 279);
+            firstnametxt.Margin = new Padding(3, 4, 3, 4);
             firstnametxt.Multiline = true;
             firstnametxt.Name = "firstnametxt";
-            firstnametxt.Size = new Size(133, 23);
+            firstnametxt.Size = new Size(151, 29);
             firstnametxt.TabIndex = 112;
             firstnametxt.TextChanged += textBox1_TextChanged;
             // 
             // lastnametxt
             // 
             lastnametxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lastnametxt.Location = new Point(169, 209);
+            lastnametxt.Location = new Point(193, 279);
+            lastnametxt.Margin = new Padding(3, 4, 3, 4);
             lastnametxt.Multiline = true;
             lastnametxt.Name = "lastnametxt";
-            lastnametxt.Size = new Size(126, 23);
+            lastnametxt.Size = new Size(143, 29);
             lastnametxt.TabIndex = 113;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(33, 189);
+            label3.Location = new Point(38, 252);
             label3.Name = "label3";
-            label3.Size = new Size(64, 15);
+            label3.Size = new Size(80, 20);
             label3.TabIndex = 114;
             label3.Text = "First Name";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(169, 189);
+            label4.Location = new Point(193, 252);
             label4.Name = "label4";
-            label4.Size = new Size(63, 15);
+            label4.Size = new Size(79, 20);
             label4.TabIndex = 115;
             label4.Text = "Last Name";
             // 
             // Students
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(lastnametxt);
@@ -264,6 +274,7 @@
             Controls.Add(label10);
             Controls.Add(label9);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Students";
             Text = "Students";
             Load += Students_Load;

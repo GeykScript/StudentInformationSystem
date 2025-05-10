@@ -93,7 +93,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(446, 157);
+            label15.Location = new Point(360, 153);
             label15.Name = "label15";
             label15.Size = new Size(202, 32);
             label15.TabIndex = 82;
@@ -102,52 +102,52 @@
             // usernameTxt
             // 
             usernameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTxt.Location = new Point(451, 235);
+            usernameTxt.Location = new Point(365, 231);
             usernameTxt.Margin = new Padding(3, 4, 3, 4);
             usernameTxt.Multiline = true;
             usernameTxt.Name = "usernameTxt";
-            usernameTxt.Size = new Size(174, 41);
+            usernameTxt.Size = new Size(223, 41);
             usernameTxt.TabIndex = 83;
             usernameTxt.TextChanged += usernameTxt_TextChanged;
             // 
             // passTxt
             // 
             passTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passTxt.Location = new Point(451, 315);
+            passTxt.Location = new Point(365, 311);
             passTxt.Margin = new Padding(3, 4, 3, 4);
             passTxt.Multiline = true;
             passTxt.Name = "passTxt";
             passTxt.PasswordChar = '*';
-            passTxt.Size = new Size(174, 41);
+            passTxt.Size = new Size(223, 41);
             passTxt.TabIndex = 84;
             // 
             // newpassTxt
             // 
             newpassTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            newpassTxt.Location = new Point(451, 385);
+            newpassTxt.Location = new Point(365, 381);
             newpassTxt.Margin = new Padding(3, 4, 3, 4);
             newpassTxt.Multiline = true;
             newpassTxt.Name = "newpassTxt";
             newpassTxt.PasswordChar = '*';
-            newpassTxt.Size = new Size(174, 41);
+            newpassTxt.Size = new Size(223, 41);
             newpassTxt.TabIndex = 85;
             // 
             // confirmpassTxt
             // 
             confirmpassTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            confirmpassTxt.Location = new Point(451, 456);
+            confirmpassTxt.Location = new Point(365, 452);
             confirmpassTxt.Margin = new Padding(3, 4, 3, 4);
             confirmpassTxt.Multiline = true;
             confirmpassTxt.Name = "confirmpassTxt";
             confirmpassTxt.PasswordChar = '*';
-            confirmpassTxt.Size = new Size(174, 41);
+            confirmpassTxt.Size = new Size(223, 41);
             confirmpassTxt.TabIndex = 86;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(683, 155);
+            label1.Location = new Point(644, 159);
             label1.Name = "label1";
             label1.Size = new Size(216, 32);
             label1.TabIndex = 87;
@@ -155,10 +155,10 @@
             // 
             // saveBtn
             // 
-            saveBtn.Location = new Point(451, 507);
+            saveBtn.Location = new Point(365, 503);
             saveBtn.Margin = new Padding(3, 4, 3, 4);
             saveBtn.Name = "saveBtn";
-            saveBtn.Size = new Size(175, 44);
+            saveBtn.Size = new Size(224, 44);
             saveBtn.TabIndex = 88;
             saveBtn.Text = "Save Changes";
             saveBtn.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(451, 211);
+            label2.Location = new Point(365, 207);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
             label2.TabIndex = 89;
@@ -176,7 +176,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(451, 291);
+            label3.Location = new Point(365, 287);
             label3.Name = "label3";
             label3.Size = new Size(122, 20);
             label3.TabIndex = 90;
@@ -185,7 +185,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(451, 361);
+            label4.Location = new Point(365, 357);
             label4.Name = "label4";
             label4.Size = new Size(104, 20);
             label4.TabIndex = 91;
@@ -194,7 +194,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(451, 432);
+            label5.Location = new Point(365, 428);
             label5.Name = "label5";
             label5.Size = new Size(161, 20);
             label5.TabIndex = 92;
@@ -203,7 +203,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(681, 287);
+            radioButton1.Location = new Point(642, 291);
             radioButton1.Margin = new Padding(3, 4, 3, 4);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(213, 24);
@@ -216,7 +216,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(681, 320);
+            radioButton2.Location = new Point(642, 324);
             radioButton2.Margin = new Padding(3, 4, 3, 4);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(187, 24);
@@ -229,7 +229,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(681, 353);
+            radioButton3.Location = new Point(642, 357);
             radioButton3.Margin = new Padding(3, 4, 3, 4);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(215, 24);
@@ -242,7 +242,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(681, 393);
+            label6.Location = new Point(642, 397);
             label6.Name = "label6";
             label6.Size = new Size(60, 20);
             label6.TabIndex = 96;
@@ -251,10 +251,10 @@
             // 
             // submitbtn
             // 
-            submitbtn.Location = new Point(721, 480);
+            submitbtn.Location = new Point(667, 482);
             submitbtn.Margin = new Padding(3, 4, 3, 4);
             submitbtn.Name = "submitbtn";
-            submitbtn.Size = new Size(133, 41);
+            submitbtn.Size = new Size(173, 41);
             submitbtn.TabIndex = 97;
             submitbtn.Text = "Submit";
             submitbtn.UseVisualStyleBackColor = true;
@@ -263,18 +263,18 @@
             // answertxt
             // 
             answertxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            answertxt.Location = new Point(681, 429);
+            answertxt.Location = new Point(642, 433);
             answertxt.Margin = new Padding(3, 4, 3, 4);
             answertxt.Multiline = true;
             answertxt.Name = "answertxt";
-            answertxt.Size = new Size(197, 41);
+            answertxt.Size = new Size(215, 41);
             answertxt.TabIndex = 98;
             answertxt.TextChanged += answertxt_TextChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(679, 203);
+            label7.Location = new Point(640, 207);
             label7.Name = "label7";
             label7.Size = new Size(75, 20);
             label7.TabIndex = 100;
@@ -283,18 +283,18 @@
             // usernameTxt2
             // 
             usernameTxt2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTxt2.Location = new Point(681, 227);
+            usernameTxt2.Location = new Point(642, 231);
             usernameTxt2.Margin = new Padding(3, 4, 3, 4);
             usernameTxt2.Multiline = true;
             usernameTxt2.Name = "usernameTxt2";
-            usernameTxt2.Size = new Size(194, 41);
+            usernameTxt2.Size = new Size(215, 41);
             usernameTxt2.TabIndex = 99;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(175, 155);
+            label8.Location = new Point(142, 151);
             label8.Name = "label8";
             label8.Size = new Size(114, 32);
             label8.TabIndex = 101;
@@ -303,7 +303,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(162, 507);
+            button1.Location = new Point(129, 503);
             button1.Name = "button1";
             button1.Size = new Size(133, 39);
             button1.TabIndex = 103;
@@ -313,7 +313,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(83, 235);
+            textBox1.Location = new Point(50, 231);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
@@ -324,7 +324,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(223, 235);
+            textBox2.Location = new Point(190, 231);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
@@ -334,7 +334,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(83, 315);
+            textBox3.Location = new Point(50, 311);
             textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
@@ -344,7 +344,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(83, 383);
+            textBox4.Location = new Point(50, 379);
             textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
@@ -355,7 +355,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(83, 211);
+            label11.Location = new Point(50, 207);
             label11.Name = "label11";
             label11.Size = new Size(80, 20);
             label11.TabIndex = 108;
@@ -364,7 +364,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(223, 211);
+            label12.Location = new Point(190, 207);
             label12.Name = "label12";
             label12.Size = new Size(79, 20);
             label12.TabIndex = 109;
@@ -373,7 +373,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(83, 289);
+            label13.Location = new Point(50, 285);
             label13.Name = "label13";
             label13.Size = new Size(75, 20);
             label13.TabIndex = 110;
@@ -382,7 +382,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(83, 361);
+            label14.Location = new Point(50, 357);
             label14.Name = "label14";
             label14.Size = new Size(70, 20);
             label14.TabIndex = 111;
@@ -391,7 +391,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(83, 435);
+            label16.Location = new Point(50, 431);
             label16.Name = "label16";
             label16.Size = new Size(127, 20);
             label16.TabIndex = 113;
@@ -400,7 +400,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(83, 456);
+            textBox5.Location = new Point(50, 452);
             textBox5.Margin = new Padding(3, 4, 3, 4);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
