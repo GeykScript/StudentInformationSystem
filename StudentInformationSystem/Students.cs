@@ -191,7 +191,7 @@ namespace StudentInformationSystem
 
                 // Populate Excel with DataGridView data
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                { 
+                {
                     for (int j = 0; j < dataGridView1.Columns.Count; j++)
                     {
                         var cellValue = dataGridView1.Rows[i].Cells[j].Value;
@@ -210,6 +210,41 @@ namespace StudentInformationSystem
             else
             {
                 MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void searchbar_TextChanged(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string searchText = searchbar.Text;
+
+            // query on the student_informations view
+            string query = @"
+        SELECT * 
+        FROM student_informations 
+        WHERE `Last Name` LIKE @searchText 
+           OR `First Name` LIKE @searchText";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Add wildcard and parameter
+                        cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
