@@ -44,6 +44,7 @@
             textBox3 = new TextBox();
             textBox1 = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            label15 = new Label();
             SuspendLayout();
             // 
             // label10
@@ -77,7 +78,7 @@
             dateTimeTextBox2.BackColor = SystemColors.ButtonHighlight;
             dateTimeTextBox2.BorderStyle = BorderStyle.None;
             dateTimeTextBox2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimeTextBox2.Location = new Point(241, 106);
+            dateTimeTextBox2.Location = new Point(26, 106);
             dateTimeTextBox2.Name = "dateTimeTextBox2";
             dateTimeTextBox2.ReadOnly = true;
             dateTimeTextBox2.ScrollBars = ScrollBars.Vertical;
@@ -87,9 +88,9 @@
             // 
             // refreshbtn
             // 
-            refreshbtn.Location = new Point(228, 294);
+            refreshbtn.Location = new Point(209, 322);
             refreshbtn.Name = "refreshbtn";
-            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.Size = new Size(75, 36);
             refreshbtn.TabIndex = 43;
             refreshbtn.Text = "Refresh";
             refreshbtn.UseVisualStyleBackColor = true;
@@ -99,7 +100,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(505, 253);
+            label8.Location = new Point(486, 294);
             label8.Name = "label8";
             label8.Size = new Size(125, 25);
             label8.TabIndex = 42;
@@ -107,20 +108,22 @@
             // 
             // textBox6
             // 
+            textBox6.BackColor = Color.LightSkyBlue;
             textBox6.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(505, 281);
+            textBox6.Location = new Point(486, 322);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.Size = new Size(106, 43);
             textBox6.TabIndex = 41;
             textBox6.Text = "1000";
+            textBox6.TextAlign = HorizontalAlignment.Center;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(380, 253);
+            label7.Location = new Point(361, 294);
             label7.Name = "label7";
             label7.Size = new Size(126, 25);
             label7.TabIndex = 40;
@@ -130,7 +133,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(505, 164);
+            label6.Location = new Point(486, 205);
             label6.Name = "label6";
             label6.Size = new Size(130, 25);
             label6.TabIndex = 39;
@@ -140,7 +143,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(377, 164);
+            label5.Location = new Point(358, 205);
             label5.Name = "label5";
             label5.Size = new Size(122, 25);
             label5.TabIndex = 38;
@@ -148,31 +151,35 @@
             // 
             // textBox5
             // 
+            textBox5.BackColor = Color.Turquoise;
             textBox5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(384, 281);
+            textBox5.Location = new Point(365, 322);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
             textBox5.Size = new Size(106, 43);
             textBox5.TabIndex = 37;
             textBox5.Text = "1000";
+            textBox5.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox4
             // 
+            textBox4.BackColor = Color.Chartreuse;
             textBox4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(505, 195);
+            textBox4.Location = new Point(486, 236);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.Size = new Size(106, 43);
             textBox4.TabIndex = 36;
             textBox4.Text = "1000";
+            textBox4.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(204, 167);
+            label3.Location = new Point(185, 208);
             label3.Name = "label3";
             label3.Size = new Size(129, 25);
             label3.TabIndex = 35;
@@ -180,25 +187,29 @@
             // 
             // textBox3
             // 
+            textBox3.BackColor = Color.Gold;
             textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(384, 195);
+            textBox3.Location = new Point(365, 236);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(106, 43);
             textBox3.TabIndex = 34;
             textBox3.Text = "1000";
+            textBox3.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.Tomato;
             textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(213, 195);
+            textBox1.Location = new Point(194, 236);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
             textBox1.Size = new Size(106, 43);
             textBox1.TabIndex = 33;
             textBox1.Text = "1000";
+            textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // timer1
             // 
@@ -206,12 +217,23 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(358, 158);
+            label15.Name = "label15";
+            label15.Size = new Size(105, 25);
+            label15.TabIndex = 84;
+            label15.Text = "Dashboard";
+            // 
             // Dashboard1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(label15);
             Controls.Add(dateTimeTextBox2);
             Controls.Add(refreshbtn);
             Controls.Add(label8);
@@ -250,5 +272,6 @@
         public TextBox textBox3;
         public TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
+        private Label label15;
     }
 }

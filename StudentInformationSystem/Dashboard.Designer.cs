@@ -57,6 +57,8 @@
             paymentBtn = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
+            label15 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -189,6 +191,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label15);
             panel2.Controls.Add(dateTimeTextBox);
             panel2.Controls.Add(refreshbtn);
             panel2.Controls.Add(label10);
@@ -214,7 +218,7 @@
             dateTimeTextBox.BackColor = SystemColors.ButtonHighlight;
             dateTimeTextBox.BorderStyle = BorderStyle.None;
             dateTimeTextBox.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimeTextBox.Location = new Point(241, 106);
+            dateTimeTextBox.Location = new Point(50, 99);
             dateTimeTextBox.Name = "dateTimeTextBox";
             dateTimeTextBox.ReadOnly = true;
             dateTimeTextBox.Size = new Size(324, 36);
@@ -222,9 +226,9 @@
             // 
             // refreshbtn
             // 
-            refreshbtn.Location = new Point(228, 294);
+            refreshbtn.Location = new Point(217, 324);
             refreshbtn.Name = "refreshbtn";
-            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.Size = new Size(75, 36);
             refreshbtn.TabIndex = 17;
             refreshbtn.Text = "Refresh";
             refreshbtn.UseVisualStyleBackColor = true;
@@ -261,7 +265,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(505, 253);
+            label8.Location = new Point(496, 290);
             label8.Name = "label8";
             label8.Size = new Size(125, 25);
             label8.TabIndex = 13;
@@ -269,20 +273,22 @@
             // 
             // textBox6
             // 
+            textBox6.BackColor = Color.LightSkyBlue;
             textBox6.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(505, 281);
+            textBox6.Location = new Point(496, 318);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.Size = new Size(106, 43);
             textBox6.TabIndex = 12;
             textBox6.Text = "1000";
+            textBox6.TextAlign = HorizontalAlignment.Center;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(380, 253);
+            label7.Location = new Point(371, 290);
             label7.Name = "label7";
             label7.Size = new Size(126, 25);
             label7.TabIndex = 11;
@@ -292,7 +298,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(505, 164);
+            label6.Location = new Point(496, 201);
             label6.Name = "label6";
             label6.Size = new Size(130, 25);
             label6.TabIndex = 10;
@@ -302,7 +308,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(377, 164);
+            label5.Location = new Point(368, 201);
             label5.Name = "label5";
             label5.Size = new Size(122, 25);
             label5.TabIndex = 9;
@@ -311,31 +317,35 @@
             // 
             // textBox5
             // 
+            textBox5.BackColor = Color.Turquoise;
             textBox5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(384, 281);
+            textBox5.Location = new Point(375, 318);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
             textBox5.Size = new Size(106, 43);
             textBox5.TabIndex = 8;
             textBox5.Text = "1000";
+            textBox5.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox4
             // 
+            textBox4.BackColor = Color.Chartreuse;
             textBox4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(505, 195);
+            textBox4.Location = new Point(496, 232);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.Size = new Size(106, 43);
             textBox4.TabIndex = 7;
             textBox4.Text = "1000";
+            textBox4.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(204, 167);
+            label3.Location = new Point(195, 204);
             label3.Name = "label3";
             label3.Size = new Size(129, 25);
             label3.TabIndex = 5;
@@ -344,26 +354,30 @@
             // 
             // textBox3
             // 
+            textBox3.BackColor = Color.Gold;
             textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(384, 195);
+            textBox3.Location = new Point(375, 232);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(106, 43);
             textBox3.TabIndex = 2;
             textBox3.Text = "1000";
+            textBox3.TextAlign = HorizontalAlignment.Center;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
             // paymentBtn
             // 
+            paymentBtn.BackColor = Color.Tomato;
             paymentBtn.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            paymentBtn.Location = new Point(213, 195);
+            paymentBtn.Location = new Point(204, 232);
             paymentBtn.Multiline = true;
             paymentBtn.Name = "paymentBtn";
             paymentBtn.ReadOnly = true;
             paymentBtn.Size = new Size(106, 43);
             paymentBtn.TabIndex = 0;
             paymentBtn.Text = "1000";
+            paymentBtn.TextAlign = HorizontalAlignment.Center;
             paymentBtn.TextChanged += textBox1_TextChanged;
             // 
             // fileSystemWatcher1
@@ -376,6 +390,25 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(347, 148);
+            label15.Name = "label15";
+            label15.Size = new Size(105, 25);
+            label15.TabIndex = 83;
+            label15.Text = "Dashboard";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(185, 171);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 25);
+            label1.TabIndex = 84;
             // 
             // Dashboard
             // 
@@ -429,5 +462,7 @@
         private Button enrollmentsBtn;
         private Button usersbtn;
         private Button gradesBtn;
+        private Label label1;
+        private Label label15;
     }
 }

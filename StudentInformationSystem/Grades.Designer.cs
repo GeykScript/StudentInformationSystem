@@ -42,6 +42,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            refreshbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(213, 271);
+            dataGridView1.Location = new Point(213, 286);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(406, 135);
@@ -95,24 +96,26 @@
             // 
             // button1
             // 
-            button1.Location = new Point(423, 160);
+            button1.BackColor = Color.Chartreuse;
+            button1.Location = new Point(423, 157);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(131, 22);
+            button1.Size = new Size(131, 29);
             button1.TabIndex = 87;
             button1.Text = "View Student Grades";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(537, 231);
+            button2.BackColor = Color.Tomato;
+            button2.Location = new Point(537, 239);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(82, 35);
             button2.TabIndex = 88;
             button2.Text = "Add Grade";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // comboBox1
@@ -126,7 +129,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(213, 203);
+            comboBox2.Location = new Point(213, 211);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(204, 23);
             comboBox2.TabIndex = 106;
@@ -135,7 +138,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(423, 203);
+            comboBox3.Location = new Point(423, 211);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(196, 23);
             comboBox3.TabIndex = 107;
@@ -143,7 +146,7 @@
             // gradetxt
             // 
             gradetxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gradetxt.Location = new Point(474, 231);
+            gradetxt.Location = new Point(474, 239);
             gradetxt.Multiline = true;
             gradetxt.Name = "gradetxt";
             gradetxt.Size = new Size(57, 34);
@@ -161,7 +164,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(213, 185);
+            label1.Location = new Point(213, 193);
             label1.Name = "label1";
             label1.Size = new Size(44, 15);
             label1.TabIndex = 110;
@@ -170,7 +173,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(423, 185);
+            label2.Location = new Point(423, 193);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 111;
@@ -179,11 +182,21 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(427, 241);
+            label3.Location = new Point(427, 249);
             label3.Name = "label3";
             label3.Size = new Size(41, 15);
             label3.TabIndex = 112;
             label3.Text = "Grade:";
+            // 
+            // refreshbtn
+            // 
+            refreshbtn.Location = new Point(213, 245);
+            refreshbtn.Name = "refreshbtn";
+            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.TabIndex = 113;
+            refreshbtn.Text = "Refresh";
+            refreshbtn.UseVisualStyleBackColor = true;
+            refreshbtn.Click += refreshbtn_Click;
             // 
             // Grades
             // 
@@ -191,6 +204,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(refreshbtn);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -231,5 +245,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button refreshbtn;
     }
 }

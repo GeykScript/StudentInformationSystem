@@ -191,22 +191,24 @@
             // 
             // submitbtn
             // 
+            submitbtn.BackColor = Color.Chartreuse;
             submitbtn.Location = new Point(493, 323);
             submitbtn.Name = "submitbtn";
             submitbtn.Size = new Size(116, 31);
             submitbtn.TabIndex = 113;
             submitbtn.Text = "Save Changes";
-            submitbtn.UseVisualStyleBackColor = true;
+            submitbtn.UseVisualStyleBackColor = false;
             submitbtn.Click += submitbtn_Click;
             // 
             // loginbtn
             // 
+            loginbtn.BackColor = Color.LightSkyBlue;
             loginbtn.Location = new Point(363, 404);
             loginbtn.Name = "loginbtn";
             loginbtn.Size = new Size(122, 23);
             loginbtn.TabIndex = 114;
             loginbtn.Text = "Return to Login";
-            loginbtn.UseVisualStyleBackColor = true;
+            loginbtn.UseVisualStyleBackColor = false;
             loginbtn.Click += loginbtn_Click;
             // 
             // ForgotPassword

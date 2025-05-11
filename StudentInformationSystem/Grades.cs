@@ -204,5 +204,62 @@ namespace StudentInformationSystem
             }
 
         }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            //uses function to get the full name of the student
+            string query = @"
+                SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, 
+Average_Grade AS 'Average Grade' from students_average";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
+            string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
+            string query4 = @"SELECT course_id AS ID, course_name AS Course FROM courses";
+
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                   dataGridView1.DataSource = dt;
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                  comboBox1.DataSource = studentTable;
+                  comboBox1.DisplayMember = "Fullname";
+                  comboBox1.ValueMember = "ID";
+
+                    MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query4, conn);
+                    DataTable coursesTable = new DataTable();
+                    comboAdapter2.Fill(coursesTable);
+
+                   comboBox2.DataSource = coursesTable;
+                   comboBox2.DisplayMember = "Course";
+                   comboBox2.ValueMember = "ID";
+
+                    MessageBox.Show("Refreshed successfully!");
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
     }
 }

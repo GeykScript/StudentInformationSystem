@@ -151,12 +151,13 @@
             // 
             // saveBtn
             // 
+            saveBtn.BackColor = Color.LawnGreen;
             saveBtn.Location = new Point(319, 377);
             saveBtn.Name = "saveBtn";
             saveBtn.Size = new Size(196, 33);
             saveBtn.TabIndex = 88;
             saveBtn.Text = "Save Changes";
-            saveBtn.UseVisualStyleBackColor = true;
+            saveBtn.UseVisualStyleBackColor = false;
             saveBtn.Click += saveBtn_Click;
             // 
             // label2
@@ -243,12 +244,13 @@
             // 
             // submitbtn
             // 
+            submitbtn.BackColor = Color.LightSkyBlue;
             submitbtn.Location = new Point(584, 362);
             submitbtn.Name = "submitbtn";
             submitbtn.Size = new Size(151, 31);
             submitbtn.TabIndex = 97;
             submitbtn.Text = "Submit";
-            submitbtn.UseVisualStyleBackColor = true;
+            submitbtn.UseVisualStyleBackColor = false;
             submitbtn.Click += submitbtn_Click;
             // 
             // answertxt
@@ -283,13 +285,14 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Tomato;
             button1.Location = new Point(113, 377);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(116, 29);
             button1.TabIndex = 103;
             button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // firstnametxt

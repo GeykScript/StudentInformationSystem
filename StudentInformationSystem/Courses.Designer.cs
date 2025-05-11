@@ -94,7 +94,8 @@
             // 
             // bsitTxt
             // 
-            bsitTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bsitTxt.BackColor = Color.Tomato;
+            bsitTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bsitTxt.Location = new Point(153, 235);
             bsitTxt.Multiline = true;
             bsitTxt.Name = "bsitTxt";
@@ -102,6 +103,7 @@
             bsitTxt.Size = new Size(76, 34);
             bsitTxt.TabIndex = 61;
             bsitTxt.Text = "1000";
+            bsitTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -115,6 +117,7 @@
             // 
             // bioTxt
             // 
+            bioTxt.BackColor = Color.Chartreuse;
             bioTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bioTxt.Location = new Point(273, 235);
             bioTxt.Multiline = true;
@@ -123,6 +126,7 @@
             bioTxt.Size = new Size(76, 34);
             bioTxt.TabIndex = 69;
             bioTxt.Text = "1000";
+            bioTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -136,6 +140,7 @@
             // 
             // csTxt
             // 
+            csTxt.BackColor = Color.Gold;
             csTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             csTxt.Location = new Point(392, 235);
             csTxt.Multiline = true;
@@ -144,6 +149,7 @@
             csTxt.Size = new Size(76, 34);
             csTxt.TabIndex = 72;
             csTxt.Text = "1000";
+            csTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -157,6 +163,7 @@
             // 
             // ecoTxt
             // 
+            ecoTxt.BackColor = Color.LightCoral;
             ecoTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ecoTxt.Location = new Point(153, 331);
             ecoTxt.Multiline = true;
@@ -165,6 +172,7 @@
             ecoTxt.Size = new Size(76, 34);
             ecoTxt.TabIndex = 75;
             ecoTxt.Text = "1000";
+            ecoTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -178,6 +186,7 @@
             // 
             // cengTxt
             // 
+            cengTxt.BackColor = Color.MediumOrchid;
             cengTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cengTxt.Location = new Point(273, 331);
             cengTxt.Multiline = true;
@@ -186,16 +195,17 @@
             cengTxt.Size = new Size(76, 34);
             cengTxt.TabIndex = 78;
             cengTxt.Text = "1000";
+            cengTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(350, 153);
+            label15.Location = new Point(264, 155);
             label15.Name = "label15";
-            label15.Size = new Size(162, 25);
+            label15.Size = new Size(286, 25);
             label15.TabIndex = 81;
-            label15.Text = "TOTAL STUDENTS";
+            label15.Text = "TOTAL STUDENTS PER COURSES";
             label15.Click += label15_Click;
             // 
             // dateTimeTextBox2
@@ -219,6 +229,7 @@
             // 
             // chemTxt
             // 
+            chemTxt.BackColor = Color.SkyBlue;
             chemTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             chemTxt.Location = new Point(543, 235);
             chemTxt.Multiline = true;
@@ -227,6 +238,7 @@
             chemTxt.Size = new Size(76, 34);
             chemTxt.TabIndex = 83;
             chemTxt.Text = "1000";
+            chemTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -251,6 +263,7 @@
             // 
             // nursingTxt
             // 
+            nursingTxt.BackColor = Color.LimeGreen;
             nursingTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nursingTxt.Location = new Point(651, 235);
             nursingTxt.Multiline = true;
@@ -259,6 +272,7 @@
             nursingTxt.Size = new Size(76, 34);
             nursingTxt.TabIndex = 85;
             nursingTxt.Text = "1000";
+            nursingTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -272,6 +286,7 @@
             // 
             // litTxt
             // 
+            litTxt.BackColor = Color.DarkOrange;
             litTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             litTxt.Location = new Point(392, 331);
             litTxt.Multiline = true;
@@ -280,6 +295,7 @@
             litTxt.Size = new Size(76, 34);
             litTxt.TabIndex = 87;
             litTxt.Text = "1000";
+            litTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -293,6 +309,7 @@
             // 
             // sportTxt
             // 
+            sportTxt.BackColor = Color.HotPink;
             sportTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sportTxt.Location = new Point(543, 331);
             sportTxt.Multiline = true;
@@ -301,6 +318,7 @@
             sportTxt.Size = new Size(76, 34);
             sportTxt.TabIndex = 89;
             sportTxt.Text = "1000";
+            sportTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -314,6 +332,7 @@
             // 
             // psychoTxt
             // 
+            psychoTxt.BackColor = Color.Gray;
             psychoTxt.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             psychoTxt.Location = new Point(651, 331);
             psychoTxt.Multiline = true;
@@ -322,6 +341,7 @@
             psychoTxt.Size = new Size(76, 34);
             psychoTxt.TabIndex = 91;
             psychoTxt.Text = "1000";
+            psychoTxt.TextAlign = HorizontalAlignment.Center;
             // 
             // Courses
             // 
