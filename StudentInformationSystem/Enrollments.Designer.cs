@@ -44,6 +44,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            excelbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -211,12 +212,26 @@
             label4.TabIndex = 117;
             label4.Text = "Miscelleneous";
             // 
+            // excelbtn
+            // 
+            excelbtn.BackColor = Color.Lime;
+            excelbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            excelbtn.ForeColor = SystemColors.ActiveCaptionText;
+            excelbtn.Location = new Point(576, 151);
+            excelbtn.Name = "excelbtn";
+            excelbtn.Size = new Size(117, 32);
+            excelbtn.TabIndex = 118;
+            excelbtn.Text = "Export to Excel";
+            excelbtn.UseVisualStyleBackColor = false;
+            excelbtn.Click += excelbtn_Click;
+            // 
             // Enrollments
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(784, 415);
+            Controls.Add(excelbtn);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -262,5 +277,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Button excelbtn;
     }
 }

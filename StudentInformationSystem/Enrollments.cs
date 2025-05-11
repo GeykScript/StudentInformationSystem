@@ -146,7 +146,7 @@ namespace StudentInformationSystem
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    
+
                     dataGridView1.DataSource = dt;
 
                     // Load student list for ComboBox
@@ -154,9 +154,9 @@ namespace StudentInformationSystem
                     DataTable studentTable = new DataTable();
                     comboAdapter.Fill(studentTable);
 
-                   comboBox1.DataSource = studentTable;
-                   comboBox1.DisplayMember = "Fullname";
-                   comboBox1.ValueMember = "ID";
+                    comboBox1.DataSource = studentTable;
+                    comboBox1.DisplayMember = "Fullname";
+                    comboBox1.ValueMember = "ID";
 
                     MessageBox.Show("Refreshed successfully!");
 
@@ -165,6 +165,43 @@ namespace StudentInformationSystem
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
+            }
+        }
+
+        private void excelbtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application MExcel = new Microsoft.Office.Interop.Excel.Application();
+                MExcel.Application.Workbooks.Add(Type.Missing);
+
+                // Set column headers
+                for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    MExcel.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+
+                // Populate Excel with DataGridView data
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        var cellValue = dataGridView1.Rows[i].Cells[j].Value;
+
+                        // Check if cell value is null
+                        MExcel.Cells[i + 2, j + 1] = cellValue != null ? cellValue.ToString() : "";
+                    }
+                }
+
+                // Format Excel sheet
+                MExcel.Columns.AutoFit();
+                MExcel.Rows.AutoFit();
+                MExcel.Columns.Font.Size = 12;
+                MExcel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -48,7 +48,10 @@
             lastnametxt = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            excelbtn = new Button();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -239,12 +242,41 @@
             label4.TabIndex = 115;
             label4.Text = "Last Name";
             // 
+            // excelbtn
+            // 
+            excelbtn.BackColor = Color.Lime;
+            excelbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            excelbtn.ForeColor = SystemColors.ActiveCaptionText;
+            excelbtn.Location = new Point(33, 137);
+            excelbtn.Name = "excelbtn";
+            excelbtn.Size = new Size(117, 32);
+            excelbtn.TabIndex = 116;
+            excelbtn.Text = "Export to Excel";
+            excelbtn.UseVisualStyleBackColor = false;
+            excelbtn.Click += excelbtn_Click;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.Window;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            iconPictureBox1.IconColor = Color.SteelBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 36;
+            iconPictureBox1.Location = new Point(372, 86);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(36, 39);
+            iconPictureBox1.TabIndex = 117;
+            iconPictureBox1.TabStop = false;
+            // 
             // Students
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(excelbtn);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(lastnametxt);
@@ -268,6 +300,7 @@
             Text = "Students";
             Load += Students_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +327,7 @@
         private TextBox lastnametxt;
         private Label label3;
         private Label label4;
+        private Button excelbtn;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

@@ -203,9 +203,9 @@
             // loginbtn
             // 
             loginbtn.BackColor = Color.LightSkyBlue;
-            loginbtn.Location = new Point(363, 404);
+            loginbtn.Location = new Point(363, 392);
             loginbtn.Name = "loginbtn";
-            loginbtn.Size = new Size(122, 23);
+            loginbtn.Size = new Size(122, 35);
             loginbtn.TabIndex = 114;
             loginbtn.Text = "Return to Login";
             loginbtn.UseVisualStyleBackColor = false;

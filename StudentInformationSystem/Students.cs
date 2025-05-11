@@ -139,22 +139,9 @@ namespace StudentInformationSystem
         private void refreshbtn_Click(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            // Query to fetch all student information VIEW TABLE
             string query = @"
-        SELECT 
-           s.student_id AS ID,
-s.last_name AS `Last Name`, 
-s.first_name AS `First Name`, 
-c.course_name AS Course,
-s.year_level AS `Year Level`,
-d.department_name AS DEPARTMENT
-
-        FROM 
-            students s
-        JOIN 
-            courses c ON s.course_id = c.course_id
-        JOIN 
-            departments d ON c.department_id = d.department_id
-       ORDER BY ID";
+        SELECT * FROM student_informations";
 
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
@@ -188,5 +175,43 @@ d.department_name AS DEPARTMENT
         {
 
         }
+
+        private void excelbtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application MExcel = new Microsoft.Office.Interop.Excel.Application();
+                MExcel.Application.Workbooks.Add(Type.Missing);
+
+                // Set column headers
+                for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    MExcel.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+
+                // Populate Excel with DataGridView data
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                { 
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        var cellValue = dataGridView1.Rows[i].Cells[j].Value;
+
+                        // Check if cell value is null
+                        MExcel.Cells[i + 2, j + 1] = cellValue != null ? cellValue.ToString() : "";
+                    }
+                }
+
+                // Format Excel sheet
+                MExcel.Columns.AutoFit();
+                MExcel.Rows.AutoFit();
+                MExcel.Columns.Font.Size = 12;
+                MExcel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

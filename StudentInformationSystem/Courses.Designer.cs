@@ -54,6 +54,8 @@
             sportTxt = new TextBox();
             label11 = new Label();
             psychoTxt = new TextBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -343,12 +345,27 @@
             psychoTxt.Text = "1000";
             psychoTxt.TextAlign = HorizontalAlignment.Center;
             // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.Window;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            iconPictureBox1.IconColor = Color.SteelBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 45;
+            iconPictureBox1.Location = new Point(351, 104);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(46, 45);
+            iconPictureBox1.TabIndex = 93;
+            iconPictureBox1.TabStop = false;
+            // 
             // Courses
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconPictureBox1);
             Controls.Add(label11);
             Controls.Add(psychoTxt);
             Controls.Add(label7);
@@ -377,6 +394,7 @@
             Name = "Courses";
             Text = "Courses";
             Load += Courses_Load;
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -408,5 +426,6 @@
         public TextBox sportTxt;
         private Label label11;
         public TextBox psychoTxt;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

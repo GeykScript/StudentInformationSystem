@@ -45,6 +45,8 @@
             textBox1 = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
             label15 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -78,7 +80,7 @@
             dateTimeTextBox2.BackColor = SystemColors.ButtonHighlight;
             dateTimeTextBox2.BorderStyle = BorderStyle.None;
             dateTimeTextBox2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimeTextBox2.Location = new Point(26, 106);
+            dateTimeTextBox2.Location = new Point(108, 98);
             dateTimeTextBox2.Name = "dateTimeTextBox2";
             dateTimeTextBox2.ReadOnly = true;
             dateTimeTextBox2.ScrollBars = ScrollBars.Vertical;
@@ -227,12 +229,27 @@
             label15.TabIndex = 84;
             label15.Text = "Dashboard";
             // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.Window;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            iconPictureBox1.IconColor = Color.SteelBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 45;
+            iconPictureBox1.Location = new Point(56, 98);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(46, 45);
+            iconPictureBox1.TabIndex = 86;
+            iconPictureBox1.TabStop = false;
+            // 
             // Dashboard1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconPictureBox1);
             Controls.Add(label15);
             Controls.Add(dateTimeTextBox2);
             Controls.Add(refreshbtn);
@@ -252,6 +269,7 @@
             Name = "Dashboard1";
             Text = "Dashboard1";
             Load += Dashboard1_Load;
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,5 +291,6 @@
         public TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
         private Label label15;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

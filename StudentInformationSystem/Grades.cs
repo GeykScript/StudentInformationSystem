@@ -219,7 +219,7 @@ Average_Grade AS 'Average Grade' from students_average";
     FROM students
     ORDER BY Fullname";
 
-            string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
+            //   string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
             string query4 = @"SELECT course_id AS ID, course_name AS Course FROM courses";
 
 
@@ -232,24 +232,24 @@ Average_Grade AS 'Average Grade' from students_average";
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                   dataGridView1.DataSource = dt;
+                    dataGridView1.DataSource = dt;
 
                     // Load student list for ComboBox
                     MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
                     DataTable studentTable = new DataTable();
                     comboAdapter.Fill(studentTable);
 
-                  comboBox1.DataSource = studentTable;
-                  comboBox1.DisplayMember = "Fullname";
-                  comboBox1.ValueMember = "ID";
+                    comboBox1.DataSource = studentTable;
+                    comboBox1.DisplayMember = "Fullname";
+                    comboBox1.ValueMember = "ID";
 
                     MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query4, conn);
                     DataTable coursesTable = new DataTable();
                     comboAdapter2.Fill(coursesTable);
 
-                   comboBox2.DataSource = coursesTable;
-                   comboBox2.DisplayMember = "Course";
-                   comboBox2.ValueMember = "ID";
+                    comboBox2.DataSource = coursesTable;
+                    comboBox2.DisplayMember = "Course";
+                    comboBox2.ValueMember = "ID";
 
                     MessageBox.Show("Refreshed successfully!");
 
@@ -259,6 +259,43 @@ Average_Grade AS 'Average Grade' from students_average";
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
+            }
+        }
+
+        private void excelbtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application MExcel = new Microsoft.Office.Interop.Excel.Application();
+                MExcel.Application.Workbooks.Add(Type.Missing);
+
+                // Set column headers
+                for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    MExcel.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+
+                // Populate Excel with DataGridView data
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        var cellValue = dataGridView1.Rows[i].Cells[j].Value;
+
+                        // Check if cell value is null
+                        MExcel.Cells[i + 2, j + 1] = cellValue != null ? cellValue.ToString() : "";
+                    }
+                }
+
+                // Format Excel sheet
+                MExcel.Columns.AutoFit();
+                MExcel.Rows.AutoFit();
+                MExcel.Columns.Font.Size = 12;
+                MExcel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

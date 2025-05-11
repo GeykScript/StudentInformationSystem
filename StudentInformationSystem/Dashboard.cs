@@ -56,24 +56,9 @@ namespace StudentInformationSystem
         {
             string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
             string query = @"
-        SELECT 
-s.student_id AS ID,
-s.last_name AS `Last Name`, 
-s.first_name AS `First Name`, 
-c.course_name AS Course,
-s.year_level AS `Year Level`,
-d.department_name AS DEPARTMENT
+SELECT * FROM student_informations;
+";
 
-        FROM 
-            students s
-        JOIN 
-            courses c ON s.course_id = c.course_id
-        JOIN 
-            departments d ON c.department_id = d.department_id
-      
-        ORDER BY
-        ID;
-        ";
             string query2 = @"
     SELECT student_id AS ID, 
            setStudentFullname(first_name, last_name) AS Fullname 
@@ -330,10 +315,10 @@ join students s on sp.student_id = s.student_id";
             {
                 try
                 {
-                   // conn.Open();
-                  //  MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                   // DataTable dt = new DataTable();
-                   // adapter.Fill(dt);
+                    // conn.Open();
+                    //  MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    // DataTable dt = new DataTable();
+                    // adapter.Fill(dt);
 
                     // Instantiate the Students form
                     Users userForm = new Users();
@@ -372,7 +357,7 @@ Average_Grade AS 'Average Grade' from students_average";
     FROM students
     ORDER BY Fullname";
 
-            string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
+            // string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
             string query4 = @"SELECT course_id AS ID, course_name AS Course FROM courses";
 
 
@@ -472,5 +457,380 @@ Average_Grade AS 'Average Grade' from students_average";
             }
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            loadform(new Dashboard1());
+        }
+
+        private void studentBtn_Click_1(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+SELECT * FROM student_informations;
+";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
+            string query3 = @"
+    SELECT course_id AS ID, 
+           course_name AS Course 
+    FROM courses
+    ORDER BY ID";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Students studentsForm = new Students();
+                    studentsForm.dataGridView1.DataSource = dt;
+                    studentsForm.dateTimeTextBox3.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    studentsForm.comboBox1.DataSource = studentTable;
+                    studentsForm.comboBox1.DisplayMember = "Fullname";
+                    studentsForm.comboBox1.ValueMember = "ID";
+
+                    MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query3, conn);
+                    DataTable studentTable2 = new DataTable();
+                    comboAdapter2.Fill(studentTable2);
+
+                    studentsForm.comboBox2.DataSource = studentTable2;
+                    studentsForm.comboBox2.DisplayMember = "Course";
+                    studentsForm.comboBox2.ValueMember = "ID";
+
+
+                    // Show the form or load it in a panel/container
+                    loadform(studentsForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void Students_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+SELECT * FROM student_informations;
+";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
+            string query3 = @"
+    SELECT course_id AS ID, 
+           course_name AS Course 
+    FROM courses
+    ORDER BY ID";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Students studentsForm = new Students();
+                    studentsForm.dataGridView1.DataSource = dt;
+                    studentsForm.dateTimeTextBox3.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    studentsForm.comboBox1.DataSource = studentTable;
+                    studentsForm.comboBox1.DisplayMember = "Fullname";
+                    studentsForm.comboBox1.ValueMember = "ID";
+
+                    MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query3, conn);
+                    DataTable studentTable2 = new DataTable();
+                    comboAdapter2.Fill(studentTable2);
+
+                    studentsForm.comboBox2.DataSource = studentTable2;
+                    studentsForm.comboBox2.DisplayMember = "Course";
+                    studentsForm.comboBox2.ValueMember = "ID";
+
+
+                    // Show the form or load it in a panel/container
+                    loadform(studentsForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            //uses function to get the full name of the student
+            string query = @"
+                SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, 
+Average_Grade AS 'Average Grade' from students_average";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
+            // string query3 = @"SELECT subject_id, subject_name FROM subjects ORDER BY course_id";
+            string query4 = @"SELECT course_id AS ID, course_name AS Course FROM courses";
+
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Grades gradesForm = new Grades();
+                    gradesForm.dataGridView1.DataSource = dt;
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    gradesForm.comboBox1.DataSource = studentTable;
+                    gradesForm.comboBox1.DisplayMember = "Fullname";
+                    gradesForm.comboBox1.ValueMember = "ID";
+
+                    MySqlDataAdapter comboAdapter2 = new MySqlDataAdapter(query4, conn);
+                    DataTable coursesTable = new DataTable();
+                    comboAdapter2.Fill(coursesTable);
+
+                    gradesForm.comboBox2.DataSource = coursesTable;
+                    gradesForm.comboBox2.DisplayMember = "Course";
+                    gradesForm.comboBox2.ValueMember = "ID";
+
+
+                    // Show the form or load it in a panel/container
+                    loadform(gradesForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void course_Click(object sender, EventArgs e)
+        {
+            Courses courses = new Courses();
+            courses.dateTimeTextBox2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"
+    SELECT course_id, COUNT(*) as student_count 
+    FROM students 
+    WHERE course_id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) 
+    GROUP BY course_id";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    Dictionary<int, int> courseCounts = new Dictionary<int, int>();
+
+                    while (reader.Read())
+                    {
+                        int courseId = reader.GetInt32("course_id");
+                        int count = reader.GetInt32("student_count");
+                        courseCounts[courseId] = count;
+                    }
+
+                    conn.Close();
+
+                    // Assign the values to the appropriate text boxes
+                    courses.bsitTxt.Text = courseCounts.ContainsKey(1) ? courseCounts[1].ToString() : "0";
+                    courses.sportTxt.Text = courseCounts.ContainsKey(2) ? courseCounts[2].ToString() : "0";
+                    courses.cengTxt.Text = courseCounts.ContainsKey(3) ? courseCounts[3].ToString() : "0";
+                    courses.bioTxt.Text = courseCounts.ContainsKey(4) ? courseCounts[4].ToString() : "0";
+                    courses.chemTxt.Text = courseCounts.ContainsKey(5) ? courseCounts[5].ToString() : "0";
+                    courses.csTxt.Text = courseCounts.ContainsKey(6) ? courseCounts[6].ToString() : "0";
+                    courses.ecoTxt.Text = courseCounts.ContainsKey(7) ? courseCounts[7].ToString() : "0";
+                    courses.psychoTxt.Text = courseCounts.ContainsKey(8) ? courseCounts[8].ToString() : "0";
+                    courses.nursingTxt.Text = courseCounts.ContainsKey(9) ? courseCounts[9].ToString() : "0";
+                    courses.litTxt.Text = courseCounts.ContainsKey(10) ? courseCounts[10].ToString() : "0";
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            loadform(courses);
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+select ID,first_name,last_name, total_payment
+from student_totalpayments sp
+join students s on sp.student_id = s.student_id";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Payment studentPayment = new Payment();
+                    studentPayment.dataGridView1.DataSource = dt;
+                    studentPayment.dateTimeTextBox.Text = DateTime.Now.ToString("yyyy -MM-dd hh:mm:ss tt");
+
+                    // Show the form or load it in a panel/container
+                    loadform(studentPayment);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void enrollment_fees_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string query = @"
+    SELECT e.enrollment_id AS ID,
+           setStudentFullname(s.first_name, s.last_name) AS Fullname,
+           e.year_lvl AS 'Year Level',
+           e.first_sem_fee AS '1st Sem Fee',
+           e.second_sem_fee AS '2nd Sem Fee',
+           e.other_fee AS 'Miscellaneous'
+    FROM enrollment_fees e
+    JOIN students s ON e.student_id = s.student_id
+    ORDER BY Fullname, 'Year Level'";
+
+            string query2 = @"
+    SELECT student_id AS ID, 
+           setStudentFullname(first_name, last_name) AS Fullname 
+    FROM students
+    ORDER BY Fullname";
+
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Load enrollment data
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Instantiate the Enrollments form
+                    Enrollments enrollmentsForm = new Enrollments();
+                    enrollmentsForm.dataGridView1.DataSource = dt;
+
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query2, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    enrollmentsForm.comboBox1.DataSource = studentTable;
+                    enrollmentsForm.comboBox1.DisplayMember = "Fullname";
+                    enrollmentsForm.comboBox1.ValueMember = "ID";
+
+                    // Show the form or load it in a panel/container
+                    loadform(enrollmentsForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void userbtn_Click(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            //uses function to  get full name of the user
+            string query = @"
+                SELECT id as ID,   getUserFullname(fname, lastname) AS Fullname, username AS Username FROM users";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    // conn.Open();
+                    //  MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    // DataTable dt = new DataTable();
+                    // adapter.Fill(dt);
+
+                    // Instantiate the Students form
+                    Users userForm = new Users();
+                    // userForm.dataGridView1.DataSource = dt;
+                    // Load student list for ComboBox
+                    MySqlDataAdapter comboAdapter = new MySqlDataAdapter(query, conn);
+                    DataTable studentTable = new DataTable();
+                    comboAdapter.Fill(studentTable);
+
+                    userForm.comboBox1.DataSource = studentTable;
+                    userForm.comboBox1.DisplayMember = "Username";
+                    userForm.comboBox1.ValueMember = "ID";
+
+                    // Show the form or load it in a panel/container
+                    loadform(userForm);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Login loginPage = new Login();
+                loginPage.Show();
+                this.Hide();
+            }
+        }
     }
 }

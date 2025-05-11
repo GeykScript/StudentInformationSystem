@@ -30,17 +30,19 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            gradesBtn = new Button();
-            usersbtn = new Button();
-            enrollmentsBtn = new Button();
-            paymentsBtn = new Button();
+            logout = new FontAwesome.Sharp.IconButton();
+            userbtn = new FontAwesome.Sharp.IconButton();
+            enrollment_fees = new FontAwesome.Sharp.IconButton();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
+            course = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            Students = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             titleName = new Label();
-            logoutbtn = new Button();
-            courseBtn = new Button();
-            dashboardBtn = new Button();
-            studentBtn = new Button();
             mainPanel = new Panel();
             panel2 = new Panel();
+            grades = new Label();
+            label15 = new Label();
             dateTimeTextBox = new TextBox();
             refreshbtn = new Button();
             label10 = new Label();
@@ -57,26 +59,26 @@
             paymentBtn = new TextBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             timer1 = new System.Windows.Forms.Timer(components);
-            label15 = new Label();
-            label1 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightSkyBlue;
-            panel1.Controls.Add(gradesBtn);
-            panel1.Controls.Add(usersbtn);
-            panel1.Controls.Add(enrollmentsBtn);
-            panel1.Controls.Add(paymentsBtn);
+            panel1.Controls.Add(logout);
+            panel1.Controls.Add(userbtn);
+            panel1.Controls.Add(enrollment_fees);
+            panel1.Controls.Add(iconButton3);
+            panel1.Controls.Add(course);
+            panel1.Controls.Add(iconButton2);
+            panel1.Controls.Add(Students);
+            panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(titleName);
-            panel1.Controls.Add(logoutbtn);
-            panel1.Controls.Add(courseBtn);
-            panel1.Controls.Add(dashboardBtn);
-            panel1.Controls.Add(studentBtn);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -84,45 +86,131 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // gradesBtn
+            // logout
             // 
-            gradesBtn.Location = new Point(38, 223);
-            gradesBtn.Name = "gradesBtn";
-            gradesBtn.Size = new Size(124, 37);
-            gradesBtn.TabIndex = 11;
-            gradesBtn.Text = "Grades";
-            gradesBtn.UseVisualStyleBackColor = true;
-            gradesBtn.Click += gradesBtn_Click;
+            logout.BackColor = Color.SteelBlue;
+            logout.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            logout.ForeColor = SystemColors.ControlLightLight;
+            logout.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            logout.IconColor = Color.White;
+            logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            logout.IconSize = 20;
+            logout.Location = new Point(39, 447);
+            logout.Name = "logout";
+            logout.Size = new Size(122, 37);
+            logout.TabIndex = 19;
+            logout.Text = "Logout";
+            logout.TextImageRelation = TextImageRelation.ImageBeforeText;
+            logout.UseVisualStyleBackColor = false;
+            logout.Click += logout_Click;
             // 
-            // usersbtn
+            // userbtn
             // 
-            usersbtn.Location = new Point(37, 393);
-            usersbtn.Name = "usersbtn";
-            usersbtn.Size = new Size(124, 37);
-            usersbtn.TabIndex = 10;
-            usersbtn.Text = "Users";
-            usersbtn.UseVisualStyleBackColor = true;
-            usersbtn.Click += usersbtn_Click;
+            userbtn.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            userbtn.IconColor = Color.Black;
+            userbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            userbtn.IconSize = 20;
+            userbtn.Location = new Point(39, 388);
+            userbtn.Name = "userbtn";
+            userbtn.Size = new Size(122, 37);
+            userbtn.TabIndex = 18;
+            userbtn.Text = "Users";
+            userbtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            userbtn.UseVisualStyleBackColor = true;
+            userbtn.Click += userbtn_Click;
             // 
-            // enrollmentsBtn
+            // enrollment_fees
             // 
-            enrollmentsBtn.Location = new Point(38, 350);
-            enrollmentsBtn.Name = "enrollmentsBtn";
-            enrollmentsBtn.Size = new Size(124, 37);
-            enrollmentsBtn.TabIndex = 9;
-            enrollmentsBtn.Text = "Enrollment Fees";
-            enrollmentsBtn.UseVisualStyleBackColor = true;
-            enrollmentsBtn.Click += enrollmentsBtn_Click;
+            enrollment_fees.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            enrollment_fees.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            enrollment_fees.IconColor = Color.Black;
+            enrollment_fees.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            enrollment_fees.IconSize = 20;
+            enrollment_fees.Location = new Point(40, 345);
+            enrollment_fees.Name = "enrollment_fees";
+            enrollment_fees.Size = new Size(121, 37);
+            enrollment_fees.TabIndex = 17;
+            enrollment_fees.Text = "Enrollment Fee";
+            enrollment_fees.TextImageRelation = TextImageRelation.ImageBeforeText;
+            enrollment_fees.UseVisualStyleBackColor = true;
+            enrollment_fees.Click += enrollment_fees_Click;
             // 
-            // paymentsBtn
+            // iconButton3
             // 
-            paymentsBtn.Location = new Point(38, 307);
-            paymentsBtn.Name = "paymentsBtn";
-            paymentsBtn.Size = new Size(124, 37);
-            paymentsBtn.TabIndex = 8;
-            paymentsBtn.Text = "Payments";
-            paymentsBtn.UseVisualStyleBackColor = true;
-            paymentsBtn.Click += paymentsBtn_Click;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.MoneyBills;
+            iconButton3.IconColor = Color.Black;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 20;
+            iconButton3.Location = new Point(40, 302);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(121, 37);
+            iconButton3.TabIndex = 16;
+            iconButton3.Text = "Payments";
+            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.Click += iconButton3_Click;
+            // 
+            // course
+            // 
+            course.IconChar = FontAwesome.Sharp.IconChar.Chalkboard;
+            course.IconColor = Color.Black;
+            course.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            course.IconSize = 20;
+            course.Location = new Point(40, 259);
+            course.Name = "course";
+            course.Size = new Size(121, 37);
+            course.TabIndex = 15;
+            course.Text = "Course";
+            course.TextAlign = ContentAlignment.MiddleLeft;
+            course.TextImageRelation = TextImageRelation.ImageBeforeText;
+            course.UseVisualStyleBackColor = true;
+            course.Click += course_Click;
+            // 
+            // iconButton2
+            // 
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.MoneyCheck;
+            iconButton2.IconColor = Color.Black;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.Location = new Point(40, 216);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(121, 37);
+            iconButton2.TabIndex = 14;
+            iconButton2.Text = "Grades";
+            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
+            // 
+            // Students
+            // 
+            Students.IconChar = FontAwesome.Sharp.IconChar.Users;
+            Students.IconColor = Color.Black;
+            Students.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            Students.IconSize = 20;
+            Students.Location = new Point(40, 175);
+            Students.Name = "Students";
+            Students.Size = new Size(121, 37);
+            Students.TabIndex = 13;
+            Students.Text = "Students";
+            Students.TextImageRelation = TextImageRelation.ImageBeforeText;
+            Students.UseVisualStyleBackColor = true;
+            Students.Click += Students_Click;
+            // 
+            // iconButton1
+            // 
+            iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 20;
+            iconButton1.Location = new Point(40, 131);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(121, 37);
+            iconButton1.TabIndex = 12;
+            iconButton1.Text = "Dashboard";
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // titleName
             // 
@@ -130,55 +218,12 @@
             titleName.BackColor = Color.LightSkyBlue;
             titleName.Font = new Font("Sitka Banner", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titleName.ForeColor = SystemColors.ButtonHighlight;
-            titleName.Location = new Point(24, 44);
+            titleName.Location = new Point(26, 25);
             titleName.Name = "titleName";
             titleName.Size = new Size(157, 69);
             titleName.TabIndex = 6;
             titleName.Text = "iSTUD";
             titleName.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // logoutbtn
-            // 
-            logoutbtn.BackColor = Color.SteelBlue;
-            logoutbtn.BackgroundImageLayout = ImageLayout.None;
-            logoutbtn.ForeColor = SystemColors.ButtonHighlight;
-            logoutbtn.Location = new Point(37, 447);
-            logoutbtn.Name = "logoutbtn";
-            logoutbtn.Size = new Size(124, 37);
-            logoutbtn.TabIndex = 5;
-            logoutbtn.Text = "Logout";
-            logoutbtn.UseVisualStyleBackColor = false;
-            logoutbtn.Click += logoutbtn_Click;
-            // 
-            // courseBtn
-            // 
-            courseBtn.Location = new Point(38, 265);
-            courseBtn.Name = "courseBtn";
-            courseBtn.Size = new Size(124, 37);
-            courseBtn.TabIndex = 3;
-            courseBtn.Text = "Courses";
-            courseBtn.UseVisualStyleBackColor = true;
-            courseBtn.Click += courseBtn_Click;
-            // 
-            // dashboardBtn
-            // 
-            dashboardBtn.Location = new Point(37, 137);
-            dashboardBtn.Name = "dashboardBtn";
-            dashboardBtn.Size = new Size(124, 37);
-            dashboardBtn.TabIndex = 1;
-            dashboardBtn.Text = "Dashboard";
-            dashboardBtn.UseVisualStyleBackColor = true;
-            dashboardBtn.Click += dashboardBtn_Click;
-            // 
-            // studentBtn
-            // 
-            studentBtn.Location = new Point(37, 180);
-            studentBtn.Name = "studentBtn";
-            studentBtn.Size = new Size(124, 37);
-            studentBtn.TabIndex = 2;
-            studentBtn.Text = "Students";
-            studentBtn.UseVisualStyleBackColor = true;
-            studentBtn.Click += studentBtn_Click;
             // 
             // mainPanel
             // 
@@ -191,7 +236,8 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(iconPictureBox1);
+            panel2.Controls.Add(grades);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(dateTimeTextBox);
             panel2.Controls.Add(refreshbtn);
@@ -213,12 +259,31 @@
             panel2.TabIndex = 0;
             panel2.Paint += panel2_Paint;
             // 
+            // grades
+            // 
+            grades.AutoSize = true;
+            grades.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grades.Location = new Point(185, 171);
+            grades.Name = "grades";
+            grades.Size = new Size(0, 25);
+            grades.TabIndex = 84;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(347, 148);
+            label15.Name = "label15";
+            label15.Size = new Size(105, 25);
+            label15.TabIndex = 83;
+            label15.Text = "Dashboard";
+            // 
             // dateTimeTextBox
             // 
             dateTimeTextBox.BackColor = SystemColors.ButtonHighlight;
             dateTimeTextBox.BorderStyle = BorderStyle.None;
             dateTimeTextBox.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimeTextBox.Location = new Point(50, 99);
+            dateTimeTextBox.Location = new Point(108, 98);
             dateTimeTextBox.Name = "dateTimeTextBox";
             dateTimeTextBox.ReadOnly = true;
             dateTimeTextBox.Size = new Size(324, 36);
@@ -391,24 +456,19 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // label15
+            // iconPictureBox1
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(347, 148);
-            label15.Name = "label15";
-            label15.Size = new Size(105, 25);
-            label15.TabIndex = 83;
-            label15.Text = "Dashboard";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(185, 171);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 25);
-            label1.TabIndex = 84;
+            iconPictureBox1.BackColor = SystemColors.Window;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            iconPictureBox1.IconColor = Color.SteelBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 45;
+            iconPictureBox1.Location = new Point(56, 98);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(46, 45);
+            iconPictureBox1.TabIndex = 85;
+            iconPictureBox1.TabStop = false;
             // 
             // Dashboard
             // 
@@ -429,6 +489,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -436,9 +497,6 @@
 
         private Panel panel1;
         private Button dashboardBtn;
-        private Button studentBtn;
-        private Button courseBtn;
-        private Button logoutbtn;
         private Panel mainPanel;
         private Label titleName;
         private Panel panel2;
@@ -458,11 +516,16 @@
         private Button refreshbtn;
         private System.Windows.Forms.Timer timer1;
         public TextBox dateTimeTextBox;
-        private Button paymentsBtn;
-        private Button enrollmentsBtn;
-        private Button usersbtn;
-        private Button gradesBtn;
-        private Label label1;
+        private Label grades;
         private Label label15;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton Students;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton course;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton enrollment_fees;
+        private FontAwesome.Sharp.IconButton userbtn;
+        private FontAwesome.Sharp.IconButton logout;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
