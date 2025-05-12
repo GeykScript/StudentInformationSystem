@@ -44,7 +44,10 @@
             label3 = new Label();
             refreshbtn = new Button();
             excelbtn = new Button();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            searchbar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -78,7 +81,7 @@
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(213, 286);
+            dataGridView1.Location = new Point(222, 287);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(406, 135);
@@ -89,7 +92,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(313, 114);
+            label15.Location = new Point(322, 84);
             label15.Name = "label15";
             label15.Size = new Size(218, 25);
             label15.TabIndex = 86;
@@ -98,7 +101,7 @@
             // button1
             // 
             button1.BackColor = Color.Chartreuse;
-            button1.Location = new Point(423, 157);
+            button1.Location = new Point(432, 127);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(131, 29);
@@ -110,7 +113,7 @@
             // button2
             // 
             button2.BackColor = Color.Tomato;
-            button2.Location = new Point(537, 239);
+            button2.Location = new Point(559, 209);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(82, 35);
@@ -122,7 +125,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(213, 161);
+            comboBox1.Location = new Point(222, 131);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(204, 23);
             comboBox1.TabIndex = 105;
@@ -130,7 +133,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(213, 211);
+            comboBox2.Location = new Point(222, 181);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(204, 23);
             comboBox2.TabIndex = 106;
@@ -139,7 +142,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(423, 211);
+            comboBox3.Location = new Point(445, 181);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(196, 23);
             comboBox3.TabIndex = 107;
@@ -147,7 +150,7 @@
             // gradetxt
             // 
             gradetxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gradetxt.Location = new Point(474, 239);
+            gradetxt.Location = new Point(496, 209);
             gradetxt.Multiline = true;
             gradetxt.Name = "gradetxt";
             gradetxt.Size = new Size(57, 34);
@@ -156,7 +159,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(213, 143);
+            label7.Location = new Point(222, 113);
             label7.Name = "label7";
             label7.Size = new Size(83, 15);
             label7.TabIndex = 109;
@@ -165,7 +168,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(213, 193);
+            label1.Location = new Point(222, 163);
             label1.Name = "label1";
             label1.Size = new Size(44, 15);
             label1.TabIndex = 110;
@@ -174,7 +177,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(423, 193);
+            label2.Location = new Point(445, 163);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 111;
@@ -183,7 +186,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(427, 249);
+            label3.Location = new Point(449, 219);
             label3.Name = "label3";
             label3.Size = new Size(41, 15);
             label3.TabIndex = 112;
@@ -191,9 +194,9 @@
             // 
             // refreshbtn
             // 
-            refreshbtn.Location = new Point(213, 245);
+            refreshbtn.Location = new Point(222, 258);
             refreshbtn.Name = "refreshbtn";
-            refreshbtn.Size = new Size(75, 23);
+            refreshbtn.Size = new Size(61, 23);
             refreshbtn.TabIndex = 113;
             refreshbtn.Text = "Refresh";
             refreshbtn.UseVisualStyleBackColor = true;
@@ -204,7 +207,7 @@
             excelbtn.BackColor = Color.Lime;
             excelbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             excelbtn.ForeColor = SystemColors.ActiveCaptionText;
-            excelbtn.Location = new Point(560, 157);
+            excelbtn.Location = new Point(569, 127);
             excelbtn.Name = "excelbtn";
             excelbtn.Size = new Size(117, 29);
             excelbtn.TabIndex = 117;
@@ -212,12 +215,38 @@
             excelbtn.UseVisualStyleBackColor = false;
             excelbtn.Click += excelbtn_Click;
             // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = SystemColors.Window;
+            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Search;
+            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 20;
+            iconPictureBox2.Location = new Point(471, 259);
+            iconPictureBox2.Margin = new Padding(3, 2, 3, 2);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(21, 20);
+            iconPictureBox2.TabIndex = 122;
+            iconPictureBox2.TabStop = false;
+            // 
+            // searchbar
+            // 
+            searchbar.Location = new Point(303, 259);
+            searchbar.Margin = new Padding(3, 2, 3, 2);
+            searchbar.Name = "searchbar";
+            searchbar.Size = new Size(171, 23);
+            searchbar.TabIndex = 121;
+            searchbar.TextChanged += searchbar_TextChanged;
+            // 
             // Grades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(searchbar);
             Controls.Add(excelbtn);
             Controls.Add(refreshbtn);
             Controls.Add(label3);
@@ -240,6 +269,7 @@
             Name = "Grades";
             Text = "Grades";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -262,5 +292,7 @@
         private Label label3;
         private Button refreshbtn;
         private Button excelbtn;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private TextBox searchbar;
     }
 }

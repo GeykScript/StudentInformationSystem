@@ -298,5 +298,38 @@ Average_Grade AS 'Average Grade' from students_average";
                 MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void searchbar_TextChanged(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;password=admin;database=studentinfodb;";
+            string searchText = searchbar.Text;
+
+            string query = @"
+                SELECT student_id as ID, setStudentFullname(first_name,last_name) as Fullname, 
+Average_Grade AS 'Average Grade' from students_average WHERE last_name LIKE @searchText 
+           OR first_name LIKE @searchText";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Add wildcard and parameter
+                        cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
     }
 }
