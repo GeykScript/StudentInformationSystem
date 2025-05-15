@@ -27,7 +27,8 @@ Download the SQL file from this repository:
 
 ### 3. 💾 Download and Run the Application Installer
 
-👉 [Download StudentInformationSystemInstaller.exe](./StudentInformationSystemInstaller.exe)
+  [Download StudentInformationSystemInstaller.exe](https://raw.githubusercontent.com/GeykScript/StudentInformationSystem/master/StudentInformationSystemInstaller.exe)
+
 
 1. Run the installer.
 2. Follow the setup wizard to install the Student Information System.
