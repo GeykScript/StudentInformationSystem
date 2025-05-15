@@ -1,29 +1,36 @@
-Student Information System
-📦 Project Overview
-This is a Student Information System application. Follow the steps below to set up and run the system on your local machine.
+# 🧾 Student Information System
 
-⚙️ Setup Instructions
-1. 📥 Download the Database
-Download the SQL file:
+## 📦 Project Overview
+This is a Student Information System application built for managing student data. Follow the instructions below to install and set up the system on your local machine.
 
-studentinfodb.sql
+---
 
-2. 🗃️ Import the Database
-Import the SQL file in MySQL Workbench (run as Administrator):
+## ⚙️ Setup Instructions
 
-Open MySQL Workbench as Administrator.
+### 1. 📥 Download the Database File
 
-Connect to your local MySQL server.
+Download the SQL file from this repository:
 
-Create a new schema (e.g., studentinfodb) if needed.
+👉 [Download studentinfodb.sql](./studentinfodb.sql)
 
-Open studentinfodb.sql.
+---
 
-Execute the script to import the database.
+### 2. 🗃️ Import the Database Using MySQL Workbench
 
-3. 💾 Download and Run the App Installer
-Download and run the application installer:
+1. Open **MySQL Workbench as Administrator**.
+2. Connect to your local MySQL server.
+3. (Optional) Create a new schema (e.g., `studentinfodb`).
+4. Open the downloaded `studentinfodb.sql` file.
+5. Click the ⚡ **Execute** button to import the database.
 
-StudentInformationSystemInstaller.exe
+---
 
-Follow the installation prompts to set up the Student Information System.
+### 3. 💾 Download and Run the Application Installer
+
+👉 [Download StudentInformationSystemInstaller.exe](./StudentInformationSystemInstaller.exe)
+
+1. Run the installer.
+2. Follow the setup wizard to install the Student Information System.
+3. Launch the application and start managing student records.
+
+---
