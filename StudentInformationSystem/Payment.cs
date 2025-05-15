@@ -29,7 +29,8 @@ namespace StudentInformationSystem
                     conn.Open();
 
                     // Call the stored procedure
-                    string procedureQuery = "CALL updatePayments();";
+
+                    string procedureQuery = "CALL updatePayments();"; 
                     MySqlCommand cmd = new MySqlCommand(procedureQuery, conn);
                     cmd.ExecuteNonQuery();
 
