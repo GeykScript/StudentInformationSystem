@@ -31,7 +31,7 @@ Download the SQL file from this repository:
 
 
 1. Run the installer.
-2. Follow the setup wizard to install the Student Information System.
+2. Follow the setup to nstall the Student Information System.
 3. Launch the application and start managing student records.
 
 ---
