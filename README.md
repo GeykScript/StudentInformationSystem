@@ -11,7 +11,7 @@ This is a Student Information System application built for managing student data
 
 Download the SQL file from this repository:
 
-👉 [Download studentinfodb.sql](./studentinfodb.sql)
+ [Download studentinfodb.sql](https://raw.githubusercontent.com/GeykScript/StudentInformationSystem/master/studentinfodb.sql)
 
 ---
 
